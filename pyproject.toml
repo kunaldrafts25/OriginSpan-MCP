@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "originspan-mcp"
 version = "0.5.2rc2"
 description = "Durable application discovery, scoped hybrid retrieval, SQL lineage and architecture over MCP"
+authors = [{name = "Kunal Singh"}]
 requires-python = ">=3.12"
 readme = "README_PYPI.md"
 keywords = ["mcp", "discovery", "lineage", "architecture", "offline"]
