@@ -44,7 +44,7 @@ def build(wheelhouse, output, commit):
     (folder / 'requirements-lock.txt').write_text(''.join(f"{name}=={p['version']} --hash=sha256:{p['sha256']}\n" for name, p in sorted(packages.items())), encoding='utf-8')
     (folder / 'DEPENDENCIES.json').write_text(json.dumps(packages, indent=2) + '\n', encoding='utf-8')
     (folder / 'docs').mkdir()
-    for filename in ['PILOT-QUICKSTART.md', 'release-v0.5.2rc2.md', 'offline-discovery.md']:
+    for filename in ['PILOT-QUICKSTART.md', 'PYPI-PUBLISHING.md', 'release-v0.5.2rc2.md', 'offline-discovery.md']:
         shutil.copy2(ROOT / 'docs' / filename, folder / 'docs' / filename)
     shutil.copytree(ROOT / 'docs/validation-results/offline-feasibility', folder / 'docs/evidence')
     for filename in ['LICENSE', 'THIRD_PARTY_NOTICES.md']:
