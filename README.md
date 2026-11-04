@@ -1,6 +1,6 @@
 # OriginSpan MCP
 
-[![PyPI 0.5.2rc2](https://img.shields.io/badge/PyPI-0.5.2rc2-blue)](https://pypi.org/project/originspan-mcp/0.5.2rc2/) [![Pilot release](https://img.shields.io/badge/Pilot_release-v0.5.2rc2-teal)](https://github.com/kunaldrafts25/OriginSpan-MCP/releases/tag/v0.5.2rc2)
+[![PyPI 0.5.2rc2](https://img.shields.io/badge/PyPI-0.5.2rc2-blue)](https://pypi.org/project/originspan-mcp/0.5.2rc2/) [![Pilot release](https://img.shields.io/badge/Pilot_release-v0.5.2rc2-teal)](https://github.com/kunaldrafts25/OriginSpan-MCP/releases/tag/v0.5.2rc2) [![Container package](https://img.shields.io/badge/GHCR-0.5.2rc2-blue)](https://github.com/users/kunaldrafts25/packages/container/package/originspan-mcp)
 
 Source-backed application discovery for MCP clients, with optional offline local-model reasoning.
 
@@ -52,6 +52,6 @@ No live customer-record profiling, automatic source modification, arbitrary appl
 
 ## Project and license
 
-[Source and issues](https://github.com/kunaldrafts25/OriginSpan-MCP) Ã‚Â· [Releases](https://github.com/kunaldrafts25/OriginSpan-MCP/releases) Ã‚Â· [Apache-2.0 license](https://github.com/kunaldrafts25/OriginSpan-MCP/blob/main/LICENSE)
+[Source and issues](https://github.com/kunaldrafts25/OriginSpan-MCP) Ãƒâ€šÃ‚Â· [Releases](https://github.com/kunaldrafts25/OriginSpan-MCP/releases) Ãƒâ€šÃ‚Â· [Apache-2.0 license](https://github.com/kunaldrafts25/OriginSpan-MCP/blob/main/LICENSE)
 
 Model/runtime assets and optional dependencies retain their own licenses. See the supplied third-party notices and exact asset provenance before redistribution.
