@@ -1,7 +1,7 @@
 # Lightweight Render MCP: the host AI provides reasoning. No local model.
 FROM python:3.13-slim
 WORKDIR /opt/diamond
-COPY pyproject.toml ./
+COPY pyproject.toml README_PYPI.md ./
 RUN python -c "import tomllib,subprocess,sys; p=tomllib.load(open('pyproject.toml','rb')); subprocess.check_call([sys.executable,'-m','pip','install','--no-cache-dir',*p['project']['dependencies'],*p['project']['optional-dependencies']['postgres'],'setuptools>=75','wheel'])"
 COPY src ./src
 RUN python -m pip install --no-deps --no-build-isolation . && useradd --create-home --uid 10001 diamond

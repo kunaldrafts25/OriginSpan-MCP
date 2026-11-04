@@ -1,5 +1,7 @@
 # OriginSpan MCP
 
+[![PyPI 0.5.2rc2](https://img.shields.io/badge/PyPI-0.5.2rc2-blue)](https://pypi.org/project/originspan-mcp/0.5.2rc2/) [![Pilot release](https://img.shields.io/badge/Pilot_release-v0.5.2rc2-teal)](https://github.com/kunaldrafts25/OriginSpan-MCP/releases/tag/v0.5.2rc2)
+
 Source-backed application discovery for MCP clients, with optional offline local-model reasoning.
 
 OriginSpan indexes approved code, SQL, schemas, contracts and metadata into a versioned evidence corpus. AI clients retrieve application context, architecture, fields and lineage through MCP. An optional local controller produces cited discovery reports using separately provisioned model assets.
@@ -21,7 +23,7 @@ The MCP evidence server itself does not require a reasoning model. An AI client 
 
 Use the Windows x64 / Python 3.13 offline bundle from [GitHub Releases](https://github.com/kunaldrafts25/OriginSpan-MCP/releases). It includes dependency wheels, an installer, checksums and verification instructions. Python, model weights and llama.cpp binaries are separate prerequisites.
 
-**PyPI publication is pending its account connection.** Once version 0.5.2rc2 is published:
+Install the published pilot package from [PyPI](https://pypi.org/project/originspan-mcp/0.5.2rc2/):
 
 ```console
 python -m pip install originspan-mcp==0.5.2rc2
@@ -29,6 +31,8 @@ originspan --help
 ```
 
 The Python package declares Python 3.12 or newer. The bundled Windows installer specifically targets x64/Python 3.13; macOS and other accelerated runtime combinations require separate qualification.
+
+Docker distribution is described in the [GitHub container package guide](https://github.com/kunaldrafts25/OriginSpan-MCP/blob/main/docs/CONTAINER-PACKAGE.md) for MCP clients. Model assets remain separate.
 
 ## First discovery
 
@@ -48,6 +52,6 @@ No live customer-record profiling, automatic source modification, arbitrary appl
 
 ## Project and license
 
-[Source and issues](https://github.com/kunaldrafts25/OriginSpan-MCP) · [Releases](https://github.com/kunaldrafts25/OriginSpan-MCP/releases) · [Apache-2.0 license](https://github.com/kunaldrafts25/OriginSpan-MCP/blob/main/LICENSE)
+[Source and issues](https://github.com/kunaldrafts25/OriginSpan-MCP) Ã‚Â· [Releases](https://github.com/kunaldrafts25/OriginSpan-MCP/releases) Ã‚Â· [Apache-2.0 license](https://github.com/kunaldrafts25/OriginSpan-MCP/blob/main/LICENSE)
 
 Model/runtime assets and optional dependencies retain their own licenses. See the supplied third-party notices and exact asset provenance before redistribution.

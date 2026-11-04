@@ -10,3 +10,5 @@ build/
 *.sqlite*
 
 .originspan/
+.container-build/
+container-validation.json

@@ -1,6 +1,6 @@
 FROM python:3.13-slim AS runtime
 WORKDIR /opt/diamond
-COPY pyproject.toml ./
+COPY pyproject.toml README_PYPI.md ./
 ARG DIAMOND_EXTRAS=postgres
 RUN python -c "import os,sys,tomllib,subprocess; p=tomllib.load(open('pyproject.toml','rb')); d=p['project']['dependencies']+['setuptools>=75','wheel']; [d.extend(p['project']['optional-dependencies'][x]) for x in os.environ.get('DIAMOND_EXTRAS','postgres').split(',') if x]; subprocess.check_call([sys.executable,'-m','pip','install','--no-cache-dir',*d])"
 COPY src ./src

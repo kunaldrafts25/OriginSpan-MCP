@@ -1,0 +1,19 @@
+FROM python:3.13-slim
+WORKDIR /opt/originspan
+ARG ORIGINSPAN_VERSION=0.5.2rc2
+LABEL org.opencontainers.image.title="OriginSpan MCP" \
+      org.opencontainers.image.description="Pilot source discovery MCP; model assets provisioned separately" \
+      org.opencontainers.image.source="https://github.com/kunaldrafts25/OriginSpan-MCP" \
+      org.opencontainers.image.licenses="Apache-2.0" \
+      org.opencontainers.image.version="${ORIGINSPAN_VERSION}"
+COPY .container-build/*.whl /tmp/originspan-wheels/
+RUN python -c "import glob,subprocess,sys; w,=glob.glob('/tmp/originspan-wheels/*.whl'); subprocess.check_call([sys.executable,'-m','pip','install','--no-cache-dir',w+'[postgres]'])" \
+    && python -m pip check \
+    && useradd --create-home --uid 10001 originspan \
+    && mkdir /state && chown originspan:originspan /state
+COPY LICENSE THIRD_PARTY_NOTICES.md ./
+USER originspan
+ENV ORIGINSPAN_STATE=/state ORIGINSPAN_ALLOW_GITHUB=false ORIGINSPAN_NEURAL_ENABLED=false PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+VOLUME ["/state"]
+ENTRYPOINT ["originspan"]
+CMD ["--state", "/state", "--project", "local", "serve", "--transport", "stdio"]

@@ -1,0 +1,56 @@
+name: Publish verified MCP container
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Published application release to package
+        required: true
+        default: v0.5.2rc2
+permissions:
+  contents: read
+  packages: write
+concurrency:
+  group: container-${{ inputs.release_tag }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify exact release wheel
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+        run: |
+          export RELEASE_REPO="$GITHUB_REPOSITORY"
+          python scripts/prepare_pypi_release.py
+          mkdir -p .container-build
+          cp dist/*.whl .container-build/
+          echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}:${RELEASE_TAG#v}" >> "$GITHUB_ENV"
+          echo "VERSION=${RELEASE_TAG#v}" >> "$GITHUB_ENV"
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Refuse to replace an existing image version
+        run: |
+          if docker manifest inspect "$IMAGE" > /dev/null 2>&1; then
+            echo "Image tag already exists; use a new application release version."
+            exit 1
+          fi
+      - name: Build and verify before publication
+        run: |
+          docker build --file Dockerfile.package --build-arg "ORIGINSPAN_VERSION=$VERSION" --label "org.opencontainers.image.revision=$GITHUB_SHA" --tag "$IMAGE" .
+          python -m pip install mcp==2.3.0
+          python scripts/verify_container.py --image "$IMAGE" --version "$VERSION" --output container-validation.json
+      - name: Publish package
+        run: docker push "$IMAGE"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: container-validation
+          path: container-validation.json
+          if-no-files-found: error
