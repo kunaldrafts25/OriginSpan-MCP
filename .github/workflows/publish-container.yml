@@ -48,9 +48,25 @@ jobs:
           python -m pip install mcp==2.3.0
           python scripts/verify_container.py --image "$IMAGE" --version "$VERSION" --output container-validation.json
       - name: Publish package
-        run: docker push "$IMAGE"
+        run: |
+          for attempt in 1 2 3; do
+            if docker push "$IMAGE"; then
+              exit 0
+            fi
+            if [ "$attempt" = 3 ]; then
+              exit 1
+            fi
+            sleep 5
+          done
+      - name: Package access diagnostic
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "/users/$GITHUB_REPOSITORY_OWNER/packages/container/originspan-mcp" --jq '{name,visibility,html_url,repository: .repository.full_name}' || true
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: container-validation
           path: container-validation.json
-          if-no-files-found: error
+          if-no-files-found: warn
