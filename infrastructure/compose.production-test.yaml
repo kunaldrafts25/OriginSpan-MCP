@@ -1,0 +1,19 @@
+name: diamond-mcp-production-validation
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.6-pg16-bookworm
+    environment:
+      POSTGRES_USER: diamond
+      POSTGRES_PASSWORD: ${DIAMOND_PRODUCTION_TEST_PASSWORD:?Generate the ignored production test environment first}
+      POSTGRES_DB: diamond
+    ports: ["127.0.0.1:55434:5432"]
+    volumes:
+      - data:/var/lib/postgresql/data
+      - ./production-db-init.sql:/docker-entrypoint-initdb.d/01-vector.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U diamond -d diamond"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+volumes:
+  data:

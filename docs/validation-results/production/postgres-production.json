@@ -1,0 +1,12 @@
+{
+  "status": "PASSED",
+  "database": "PostgreSQL 16 / pgvector 0.8.6",
+  "checks": [
+    "schema migration",
+    "concurrent claims",
+    "HNSW index",
+    "native vector retrieval",
+    "project isolation"
+  ],
+  "adapter": "controlled vectors for infrastructure test; real model checked separately"
+}

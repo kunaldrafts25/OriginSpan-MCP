@@ -1,0 +1,375 @@
+{
+  "status": "PASS",
+  "checks": {
+    "preserves_39_routes_3_tables_23_columns": true,
+    "five_frontend_dependencies": true,
+    "users_insert_and_select": true,
+    "contacts_insert_and_select": true,
+    "explicit_jpa_id_mapping": true,
+    "eight_supported_jpql_queries_resolved": true,
+    "birthday_has_precise_line_and_usage": true,
+    "hashing_token_scaling_and_lookup": true,
+    "no_kubernetes_single_document_parse_errors": true,
+    "compact_dossier_under_100kb": true,
+    "c360_handoff_requires_review": true
+  },
+  "check_count": 11,
+  "passed": 11,
+  "source_revision": "db35fea9fd090150e2398106aadb475576f80d94",
+  "index_seconds": 24.776709600002505,
+  "dossier_seconds": 0.17554039997048676,
+  "dossier_bytes": 52996,
+  "facts": 628,
+  "service_dependencies": [
+    {
+      "source": "frontend",
+      "target": "userservice",
+      "kind": "configured_service_call",
+      "status": "STATIC_CONFIG_BINDING",
+      "variable": "USERSERVICE_API_ADDR",
+      "evidence": [
+        {
+          "file": "src/frontend/frontend.py",
+          "line": 665
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+          "line": 32
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "source": "frontend",
+      "target": "transactionhistory",
+      "kind": "configured_service_call",
+      "status": "STATIC_CONFIG_BINDING",
+      "variable": "HISTORY_API_ADDR",
+      "evidence": [
+        {
+          "file": "src/frontend/frontend.py",
+          "line": 669
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+          "line": 30
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "source": "frontend",
+      "target": "contacts",
+      "kind": "configured_service_call",
+      "status": "STATIC_CONFIG_BINDING",
+      "variable": "CONTACTS_API_ADDR",
+      "evidence": [
+        {
+          "file": "src/frontend/frontend.py",
+          "line": 673
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+          "line": 31
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "source": "frontend",
+      "target": "balancereader",
+      "kind": "configured_service_call",
+      "status": "STATIC_CONFIG_BINDING",
+      "variable": "BALANCES_API_ADDR",
+      "evidence": [
+        {
+          "file": "src/frontend/frontend.py",
+          "line": 667
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+          "line": 29
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "source": "frontend",
+      "target": "ledgerwriter",
+      "kind": "configured_service_call",
+      "status": "STATIC_CONFIG_BINDING",
+      "variable": "TRANSACTIONS_API_ADDR",
+      "evidence": [
+        {
+          "file": "src/frontend/frontend.py",
+          "line": 663
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+          "line": 28
+        },
+        {
+          "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+          "line": 84
+        }
+      ]
+    }
+  ],
+  "orm_operations": [
+    {
+      "kind": "orm_operation",
+      "name": "update",
+      "file": "extras/postgres-hpa/helm-postgres-ha/pgpool-operator/pgpool.py",
+      "line": 61,
+      "status": "STATIC_EVIDENCE",
+      "extractor": "originspan-discovery-1",
+      "binding": "kopf.on",
+      "framework": "sqlalchemy_candidate",
+      "predicates": [],
+      "function": "reconcile_backend_nodes",
+      "id": "c1e59f407085a315d070ff4dfcbbef1a30a9492fa3893d9a4309b996ed8a9b5f"
+    },
+    {
+      "kind": "orm_operation",
+      "name": "insert",
+      "file": "src/accounts/contacts/db.py",
+      "line": 56,
+      "status": "EXPLICIT_TABLE_BINDING",
+      "extractor": "originspan-discovery-1",
+      "binding": "self.contacts_table",
+      "framework": "sqlalchemy",
+      "predicates": [],
+      "function": "add_contact",
+      "table": "contacts",
+      "id": "6a4d57470f2a1e9ac3b053f94e07632e85e49a71e997d809227d04f03c78b501"
+    },
+    {
+      "kind": "orm_operation",
+      "name": "select",
+      "file": "src/accounts/contacts/db.py",
+      "line": 70,
+      "status": "EXPLICIT_TABLE_BINDING",
+      "extractor": "originspan-discovery-1",
+      "binding": "self.contacts_table",
+      "framework": "sqlalchemy",
+      "predicates": [
+        "self.contacts_table.c.username = username"
+      ],
+      "function": "get_contacts",
+      "table": "contacts",
+      "id": "bfcbde347e28b2fb2dee4eda63f2b11a8609167f86b4907574330db1aafed778"
+    },
+    {
+      "kind": "orm_operation",
+      "name": "update",
+      "file": "src/accounts/contacts/tests/test_contacts.py",
+      "line": 42,
+      "status": "STATIC_EVIDENCE",
+      "extractor": "originspan-discovery-1",
+      "binding": "example_contact",
+      "framework": "sqlalchemy_candidate",
+      "predicates": [],
+      "function": "create_new_contact",
+      "id": "2943c48434ff998855a35e569eeaeed3e55151938668cc5615b3de88aa37c028"
+    },
+    {
+      "kind": "orm_operation",
+      "name": "select",
+      "file": "src/accounts/userservice/db.py",
+      "line": 75,
+      "status": "EXPLICIT_TABLE_BINDING",
+      "extractor": "originspan-discovery-1",
+      "binding": "self.users_table",
+      "framework": "sqlalchemy",
+      "predicates": [
+        "self.users_table.c.accountid = accountid"
+      ],
+      "function": "generate_accountid",
+      "table": "users",
+      "id": "5507dca0c9b6506183c97f025e7b9a335818cfaae365d46ca3402886f5ccf61b"
+    },
+    {
+      "kind": "orm_operation",
+      "name": "select",
+      "file": "src/accounts/userservice/db.py",
+      "line": 96,
+      "status": "EXPLICIT_TABLE_BINDING",
+      "extractor": "originspan-discovery-1",
+      "binding": "self.users_table",
+      "framework": "sqlalchemy",
+      "predicates": [
+        "self.users_table.c.username = username"
+      ],
+      "function": "get_user",
+      "table": "users",
+      "id": "9bbb020428b1a027c5609b2dd9588460ff1b6f65b929f53a9c34bb552080dba6"
+    },
+    {
+      "kind": "orm_operation",
+      "name": "insert",
+      "file": "src/accounts/userservice/db.py",
+      "line": 62,
+      "status": "EXPLICIT_TABLE_BINDING",
+      "extractor": "originspan-discovery-1",
+      "binding": "self.users_table",
+      "framework": "sqlalchemy",
+      "predicates": [],
+      "function": "add_user",
+      "table": "users",
+      "id": "c12ac79f9829f3641fe5a222f62e5dfcd27b26cce780061b36ceeb8c954f2605"
+    },
+    {
+      "kind": "orm_operation",
+      "name": "update",
+      "file": "src/frontend/frontend.py",
+      "line": 717,
+      "status": "STATIC_EVIDENCE",
+      "extractor": "originspan-discovery-1",
+      "binding": "app.jinja_env.globals",
+      "framework": "sqlalchemy_candidate",
+      "predicates": [],
+      "function": "create_app",
+      "id": "2c5b02794b1ab27a29d0af8b55edbc79419149e59097e766f5f43974f645ce56"
+    },
+    {
+      "kind": "orm_operation",
+      "name": "update",
+      "file": "src/frontend/frontend.py",
+      "line": 716,
+      "status": "STATIC_EVIDENCE",
+      "extractor": "originspan-discovery-1",
+      "binding": "app.jinja_env.globals",
+      "framework": "sqlalchemy_candidate",
+      "predicates": [],
+      "function": "create_app",
+      "id": "e5b7333f5cb4fec67cbe74217485d2de612f6a87ec427d0c8e6142f2e0d08960"
+    },
+    {
+      "kind": "orm_operation",
+      "name": "update",
+      "file": "src/frontend/frontend.py",
+      "line": 718,
+      "status": "STATIC_EVIDENCE",
+      "extractor": "originspan-discovery-1",
+      "binding": "app.jinja_env.globals",
+      "framework": "sqlalchemy_candidate",
+      "predicates": [],
+      "function": "create_app",
+      "id": "eb431215eaca264b7f99669458a9bd692fe4e09faf2ff2c5478f6c5b1b5b1bad"
+    }
+  ],
+  "transformation_kinds": [
+    "input_sanitization",
+    "lookup_enrichment",
+    "numeric_scaling",
+    "password_hashing",
+    "password_verification",
+    "token_construction",
+    "token_verification"
+  ],
+  "jpql_queries": [
+    {
+      "file": "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionRepository.java",
+      "line": 54,
+      "resolution": "EXPLICIT_JPA_MAPPING"
+    },
+    {
+      "file": "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionRepository.java",
+      "line": 43,
+      "resolution": "EXPLICIT_JPA_MAPPING"
+    },
+    {
+      "file": "src/ledger/transactionhistory/src/main/java/anthos/samples/bankofanthos/transactionhistory/TransactionRepository.java",
+      "line": 35,
+      "resolution": "EXPLICIT_JPA_MAPPING"
+    },
+    {
+      "file": "src/ledger/transactionhistory/src/main/java/anthos/samples/bankofanthos/transactionhistory/TransactionRepository.java",
+      "line": 38,
+      "resolution": "EXPLICIT_JPA_MAPPING"
+    },
+    {
+      "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/TransactionRepository.java",
+      "line": 38,
+      "resolution": "EXPLICIT_JPA_MAPPING"
+    },
+    {
+      "file": "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionRepository.java",
+      "line": 46,
+      "resolution": "EXPLICIT_JPA_MAPPING"
+    },
+    {
+      "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/TransactionRepository.java",
+      "line": 46,
+      "resolution": "EXPLICIT_JPA_MAPPING"
+    },
+    {
+      "file": "src/ledger/transactionhistory/src/main/java/anthos/samples/bankofanthos/transactionhistory/TransactionRepository.java",
+      "line": 46,
+      "resolution": "EXPLICIT_JPA_MAPPING"
+    }
+  ],
+  "birthday": {
+    "id": "ev-f6ed7b8b204bf903ae11c9be",
+    "name": "birthday",
+    "entity": "users",
+    "kind": "declared_schema_field",
+    "data_type": "DATE",
+    "evidence": {
+      "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+      "line": 23
+    },
+    "description": "Table users; data type DATE",
+    "interpretation": "UNRESOLVED_UNLESS_SUPPORTED_BY_DEFINITIONS",
+    "usage_count": 5,
+    "usage_candidates": [
+      {
+        "file": "src/accounts/userservice/tests/constants.py",
+        "line": 57,
+        "function": null,
+        "role": "dictionary_key"
+      },
+      {
+        "file": "src/accounts/userservice/tests/constants.py",
+        "line": 44,
+        "function": null,
+        "role": "dictionary_key"
+      },
+      {
+        "file": "src/accounts/userservice/tests/test_userservice.py",
+        "line": 109,
+        "function": "test_create_user_201_status_code_correct_db_user_object",
+        "role": "read"
+      },
+      {
+        "file": "src/accounts/userservice/userservice.py",
+        "line": 110,
+        "function": "create_user",
+        "role": "read"
+      },
+      {
+        "file": "src/loadgenerator/locustfile.py",
+        "line": 42,
+        "function": "signup_helper",
+        "role": "dictionary_key"
+      }
+    ],
+    "usage_binding": "Same identifier is a candidate association, not proved entity binding"
+  },
+  "limitations": [
+    "Local Windows execution, not a Render capacity benchmark",
+    "Structural regression checks, not a Copilot answer evaluation or competitor comparison"
+  ]
+}

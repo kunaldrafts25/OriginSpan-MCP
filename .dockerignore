@@ -1,0 +1,10 @@
+.venv
+.diamond
+.runtime
+artifacts
+.git
+__pycache__
+*.egg-info
+dist
+
+.originspan/

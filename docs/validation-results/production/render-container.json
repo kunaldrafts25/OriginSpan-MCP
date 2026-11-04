@@ -1,0 +1,21 @@
+{
+  "status": "PASSED",
+  "image": "diamond-mcp:render",
+  "memory_limit": "2 GiB",
+  "architecture": "single service, API plus one durable worker",
+  "checks": [
+    "Render-style postgres URL normalization",
+    "runtime migration",
+    "PORT=10000",
+    "TLS/OIDC and project isolation",
+    "model-free retrieval and explicit neural-unavailable status",
+    "non-root supervisor and children",
+    "disk/database persistence across restart",
+    "worker crash fails the container"
+  ],
+  "limitations": [
+    "local container rehearsal, not a live Render deployment",
+    "Render Blueprint API validation not run",
+    "small fixture under configured memory limit; no broad workload capacity claim"
+  ]
+}

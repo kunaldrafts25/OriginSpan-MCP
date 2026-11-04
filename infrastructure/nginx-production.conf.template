@@ -1,0 +1,32 @@
+pid /tmp/nginx.pid;
+events {}
+http {
+    client_body_temp_path /tmp/client_temp;
+    proxy_temp_path /tmp/proxy_temp;
+    fastcgi_temp_path /tmp/fastcgi_temp;
+    uwsgi_temp_path /tmp/uwsgi_temp;
+    scgi_temp_path /tmp/scgi_temp;
+    resolver 127.0.0.11 valid=5s ipv6=off;
+    limit_req_zone $binary_remote_addr zone=diamond_clients:10m rate=10r/s;
+    server {
+        listen 8443 ssl;
+        server_name ${DIAMOND_PUBLIC_HOST};
+        ssl_certificate /tls/fullchain.pem;
+        ssl_certificate_key /tls/privkey.pem;
+        ssl_protocols TLSv1.2 TLSv1.3;
+        client_max_body_size 50m;
+        access_log off;
+        add_header Strict-Transport-Security "max-age=31536000" always;
+        location / {
+            limit_req zone=diamond_clients burst=30 nodelay;
+            set $discovery_backend api:8765;
+            proxy_pass http://$discovery_backend;
+            proxy_http_version 1.1;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Forwarded-Proto https;
+            proxy_set_header Authorization $http_authorization;
+            proxy_buffering off;
+            proxy_read_timeout 300s;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "status": "PASSED",
+  "executed_at": "2026-11-02T10:03:22.006227+00:00",
+  "checks": [
+    "TLS certificate and hostname validation",
+    "separate monitoring scope; anonymous and reader denial",
+    "official MCP SDK over TLS; Keycloak; production app role; independent workers; project isolation",
+    "API restart preserves published evidence",
+    "Prometheus outage alert fired during catalog failure",
+    "same worker containers consumed new analysis after catalog recovery without restarting",
+    "quiesced pg_dump plus state backup restored into separate database/path; retrieval and blob hashes verified"
+  ],
+  "identity": "local test Keycloak; generated trusted local CA",
+  "transport": "HTTPS Streamable HTTP",
+  "image": "diamond-mcp:0.3.0",
+  "workers": 2,
+  "model": "disabled in base container; real neural profile validated separately",
+  "limitations": [
+    "customer IdP/DNS/certificates not configured",
+    "signed-in Copilot acceptance not run",
+    "1 TB workload not run",
+    "Prometheus alert evaluated; customer notification routing not configured"
+  ]
+}

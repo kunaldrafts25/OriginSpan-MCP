@@ -1,0 +1,23 @@
+# Render single-service image. CPU-only neural dependencies and the pinned
+# public embedding model are explicitly installed at build time, never on a
+# client request. Build context must be the standalone repository root.
+FROM python:3.13-slim
+WORKDIR /opt/diamond
+COPY pyproject.toml requirements-semantic-tested.txt ./
+RUN python -m pip install --no-cache-dir torch==2.9.1 --index-url https://download.pytorch.org/whl/cpu
+RUN python -c "import tomllib,subprocess,sys; p=tomllib.load(open('pyproject.toml','rb')); subprocess.check_call([sys.executable,'-m','pip','install','--no-cache-dir',*p['project']['dependencies'],*p['project']['optional-dependencies']['postgres'],'setuptools>=75','wheel'])"
+RUN python -m pip install --no-cache-dir -r requirements-semantic-tested.txt
+COPY src ./src
+RUN python -m pip install --no-deps --no-build-isolation . && useradd --create-home --uid 10001 diamond
+RUN python -I -m diamond_mcp model-download /opt/diamond/models/multilingual-e5-small
+COPY LICENSE THIRD_PARTY_NOTICES.md ./
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
+    OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 TOKENIZERS_PARALLELISM=false \
+    DIAMOND_MODEL_PATH=/opt/diamond/models/multilingual-e5-small \
+    ORIGINSPAN_MODEL_THREADS=1 \
+    HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
+    HF_HOME=/var/data/originspan/hf-cache
+EXPOSE 10000
+# Bootstrap the mounted state directory, then the supervisor drops permanently
+# to uid/gid 10001 before opening the catalog or starting either child.
+ENTRYPOINT ["python", "-I", "-m", "originspan.hosted"]

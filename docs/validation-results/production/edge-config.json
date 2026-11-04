@@ -1,0 +1,9 @@
+{
+  "status": "PASSED",
+  "checks": [
+    "production plus edge Compose validation",
+    "environment template substitution",
+    "non-root/read-only proxy configuration and certificate loading"
+  ],
+  "limitation": "uses local rehearsal certificate; customer certificate/DNS acceptance remains required"
+}

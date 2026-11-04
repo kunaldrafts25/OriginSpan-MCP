@@ -1,0 +1,27 @@
+{
+  "version": "discovery-2026-11-01-1",
+  "frozen_before_retrieval": true,
+  "sources": [
+    {"id":"bank", "repository":"GoogleCloudPlatform/bank-of-anthos", "commit":"db35fea9fd090150e2398106aadb475576f80d94", "license":"Apache-2.0", "subset":null},
+    {"id":"petclinic", "repository":"spring-projects/spring-petclinic", "commit":"500158f732419217507c7656904b8e6aa1bcc0d6", "license":"Apache-2.0", "subset":["src/main/java", "src/main/resources/db", "readme.md", "README.md", "LICENSE.txt"]},
+    {"id":"saleor", "repository":"saleor/saleor", "commit":"cc4aea76e397b1dead74363c266c579ae808770f", "license":"BSD-3-Clause", "subset":["saleor/product/models.py", "saleor/checkout/models.py", "saleor/order/models.py", "saleor/account/models.py", "README.md", "LICENSE"]}
+  ],
+  "tasks": [
+    {"id":"bank-person", "source":"bank", "query":"birthday of a registered banking user", "relevant_paths":["src/accounts/userservice/userservice.py", "src/accounts/accounts-db/initdb/0-accounts-schema.sql"], "expected_concept":"birthday", "answer_status":"host-evaluation-required"},
+    {"id":"bank-transfer", "source":"bank", "query":"send funds between accounts", "relevant_paths":["src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/LedgerWriterController.java"], "answer_status":"host-evaluation-required"},
+    {"id":"clinic-owner", "source":"petclinic", "query":"person responsible for the animal and their contact details", "relevant_paths":["src/main/java/org/springframework/samples/petclinic/owner/Owner.java"], "answer_status":"host-evaluation-required"},
+    {"id":"clinic-visit", "source":"petclinic", "query":"record an animal consultation with a veterinarian", "relevant_paths":["src/main/java/org/springframework/samples/petclinic/owner/Visit.java", "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java"], "answer_status":"host-evaluation-required"},
+    {"id":"commerce-basket", "source":"saleor", "query":"items a shopper is preparing to purchase", "relevant_paths":["saleor/checkout/models.py"], "answer_status":"host-evaluation-required"},
+    {"id":"commerce-variant", "source":"saleor", "query":"stock keeping units and sellable variations", "relevant_paths":["saleor/product/models.py"], "answer_status":"host-evaluation-required"},
+    {"id":"different-wording", "source":"ambiguity", "query":"when can an agreement be extended", "relevant_paths":["dictionary.md", "contract/model.py"], "expected_concept":"X17", "answer_status":"host-evaluation-required"},
+    {"id":"ambiguous-cid", "source":"ambiguity", "query":"C_ID", "relevant_paths":["customer/model.py", "contract/model.py", "dictionary.md"], "expected_behavior":"retain customer and contract alternatives", "answer_status":"host-evaluation-required"},
+    {"id":"request-trace", "source":"ambiguity", "query":"identifier to correlate diagnostic requests", "relevant_paths":["logging/trace.py"], "expected_concept":"cid", "answer_status":"host-evaluation-required"},
+    {"id":"unknown", "source":"ambiguity", "query":"Z99", "relevant_paths":["unknown.py", "dictionary.md"], "expected_behavior":"unresolved; no forced meaning", "answer_status":"host-evaluation-required"}
+  ],
+  "competitors": [
+    {"name":"Codanna", "version":"0.17.1", "status":"NOT_RUN", "reason":"Awaiting recorded executable installation and same-task output"},
+    {"name":"CodeGraphContext", "version":"0.5.7", "status":"NOT_RUN", "reason":"Requires an isolated install and graph backend"},
+    {"name":"Serena", "version":"2.1.0", "status":"NOT_RUN", "reason":"Requires approved language-server installation; application GPL is not bundled"},
+    {"name":"semantic-code-mcp", "version":"0.4.1", "status":"NOT_RUN", "reason":"Requires isolated model/runtime install"}
+  ]
+}

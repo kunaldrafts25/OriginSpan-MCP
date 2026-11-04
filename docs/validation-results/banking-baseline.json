@@ -1,0 +1,11 @@
+{
+  "endpoints": 39,
+  "tables": 3,
+  "columns": 23,
+  "missing_routes": [],
+  "unexpected_routes": [],
+  "missing_columns": [],
+  "unexpected_columns": [],
+  "tables_match": true,
+  "passed": true
+}

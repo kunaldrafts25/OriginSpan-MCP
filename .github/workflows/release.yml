@@ -1,0 +1,44 @@
+name: Build pilot release
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-pilot:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install and test source
+        run: |
+          python -m pip install '.[test]'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pytest -q
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/validate_render.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build wheel and dependency bundle
+        run: |
+          python -m pip wheel --no-deps --no-build-isolation . --wheel-dir artifacts/wheel
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $wheel = (Get-ChildItem artifacts/wheel/originspan_mcp-*.whl).FullName
+          python -m pip download --only-binary=:all: --dest artifacts/wheelhouse $wheel
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/build_release.py --wheelhouse artifacts/wheelhouse --output artifacts/release --commit '${{ github.sha }}'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Verify fresh offline installation and actual stdio
+        run: |
+          $archive = (Get-ChildItem artifacts/release/*.zip).FullName
+          python scripts/verify_release_install.py --archive $archive --output artifacts/release/windows-install-validation.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: originspan-windows-pilot
+          path: |
+            artifacts/release/*.zip
+            artifacts/release/*.json
+            artifacts/release/*.txt
+            artifacts/wheel/*.whl
+          if-no-files-found: error

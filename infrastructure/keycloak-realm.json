@@ -1,0 +1,19 @@
+{
+  "realm":"diamond", "enabled":true, "sslRequired":"none",
+  "clients":[{
+    "clientId":"diamond-integration", "enabled":true, "publicClient":false,
+    "secret":"${DIAMOND_TEST_CLIENT_SECRET}", "serviceAccountsEnabled":true,
+    "standardFlowEnabled":false, "directAccessGrantsEnabled":false,
+    "protocol":"openid-connect",
+    "protocolMappers":[
+      {"name":"resource-audience","protocol":"openid-connect","protocolMapper":"oidc-audience-mapper","config":{"included.custom.audience":"http://127.0.0.1:8765/mcp","access.token.claim":"true","id.token.claim":"false"}},
+      {"name":"project-grants","protocol":"openid-connect","protocolMapper":"oidc-hardcoded-claim-mapper","config":{"claim.name":"diamond_projects","claim.value":"[\"integration\"]","jsonType.label":"JSON","access.token.claim":"true","id.token.claim":"false"}}
+    ],
+    "defaultClientScopes":["diamond:read","diamond:analyze","diamond:propose"]
+  }],
+  "clientScopes":[
+    {"name":"diamond:read","protocol":"openid-connect","attributes":{"include.in.token.scope":"true"}},
+    {"name":"diamond:analyze","protocol":"openid-connect","attributes":{"include.in.token.scope":"true"}},
+    {"name":"diamond:propose","protocol":"openid-connect","attributes":{"include.in.token.scope":"true"}}
+  ]
+}

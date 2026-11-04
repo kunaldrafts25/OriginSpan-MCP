@@ -1,0 +1,25 @@
+# Overlay on compose.production.yaml. Supply customer-issued TLS certificates.
+services:
+  edge:
+    image: nginxinc/nginx-unprivileged:1.30.5-alpine
+    init: true
+    restart: unless-stopped
+    read_only: true
+    tmpfs: ["/tmp:size=33554432,mode=1777"]
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    pids_limit: 64
+    mem_limit: 256m
+    environment:
+      DIAMOND_PUBLIC_HOST: ${DIAMOND_PUBLIC_HOST:?Set the public hostname}
+      NGINX_ENVSUBST_TEMPLATE_DIR: /templates
+      NGINX_ENVSUBST_OUTPUT_DIR: /tmp
+      NGINX_ENVSUBST_FILTER: ^DIAMOND_PUBLIC_HOST$
+    command: ["nginx", "-c", "/tmp/nginx.conf", "-g", "daemon off;"]
+    ports: ["${DIAMOND_TLS_BIND:-0.0.0.0}:${DIAMOND_TLS_PORT:-443}:8443"]
+    volumes:
+      - ./nginx-production.conf.template:/templates/nginx.conf.template:ro
+      - ${DIAMOND_TLS_DIR:?Directory containing fullchain.pem and privkey.pem}:/tls:ro
+    depends_on:
+      api:
+        condition: service_healthy

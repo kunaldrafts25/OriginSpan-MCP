@@ -1,0 +1,21 @@
+{
+  "status": "PASSED",
+  "memory_limit": "512 MiB, swap disabled",
+  "auth": "explicit single-project demo token; no OIDC provider",
+  "storage": "ephemeral SQLite; no PostgreSQL service",
+  "checks": [
+    "startup and migration",
+    "HTTPS MCP initialize",
+    "anonymous denial",
+    "source ZIP upload",
+    "durable analysis completion",
+    "evidence retrieval",
+    "cross-project denial",
+    "review denied"
+  ],
+  "limitations": [
+    "local container test, not live Render",
+    "tiny synthetic metadata fixture only",
+    "ephemeral source/blob files; no restart durability claim"
+  ]
+}

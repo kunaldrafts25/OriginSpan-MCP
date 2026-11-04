@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-03",
+  "qualification": "UNQUALIFIED",
+  "final_offline_source_sha256": "1a3c5c02c578c976983fb8a38df57e04a653cc3b1f7591aeda24ca9ce65f80fc",
+  "regression": {
+    "full_suite_passed": 126,
+    "skipped": 1,
+    "final_focused_passed": 34,
+    "skipped_reason": "External PostgreSQL test not configured"
+  },
+  "packaging": {
+    "wheel": "originspan_mcp-0.5.1-py3-none-any.whl",
+    "sha256": "c528a1f93c10d1ab14b4c65c7a2090dbbce906f772f124dac1582fad814b62ec",
+    "package_index_access": false,
+    "installed_wheel_import": true,
+    "dependencies": "Preinstalled dependencies; not a fresh dependency provisioning test"
+  },
+  "banking": {
+    "repository": "GoogleCloudPlatform/bank-of-anthos",
+    "revision": "db35fea9fd090150e2398106aadb475576f80d94",
+    "status": "COMPLETED_WITH_GAPS",
+    "run_id": "7c6183bb362d40da9395b4923a3a74da",
+    "seconds": 410.783,
+    "stages": [
+      "purpose",
+      "architecture",
+      "demographics",
+      "sql",
+      "transformations",
+      "handoff"
+    ],
+    "counts": {
+      "tools": 15,
+      "model": 6
+    },
+    "runtime_resources": {
+      "peak_rss_mib": 1762.8,
+      "gpu_memory_mib": null,
+      "memory_limit_hit": false
+    },
+    "reported_input_tokens": 14231,
+    "reported_output_tokens": 2162,
+    "reasoning_tokens": null,
+    "online_model_called": false,
+    "cited_references_exist": true,
+    "business_correctness": "NOT_SCORED; weak SQL/handoff interpretations observed",
+    "gaps": [
+      "orm: 12/60 records collected; continuation offset 12 remains available through get_discovery_section",
+      "documentation: 12/124 records collected; continuation offset 12 remains available through get_discovery_section",
+      "demographics: interpretation context was reduced to fit the local model"
+    ],
+    "precedes_final_prompt_and_context_refinements": true
+  },
+  "final_windows_runtime_protocol_smoke": {
+    "status": "PASS",
+    "result": {
+      "claims": [
+        {
+          "text": "The field 'birthday' is a DATE type representing the date of birth supplied during registration.",
+          "citations": [
+            "E000001"
+          ]
+        }
+      ],
+      "unknowns": [
+        "Target schema definition for the 'Interpret this declared field' instruction."
+      ],
+      "requests": [
+        {
+          "action": "search",
+          "query": "schema.sql field interpretation instructions"
+        }
+      ]
+    },
+    "usage": [
+      {
+        "seconds": 14.507,
+        "input_tokens": 347,
+        "output_tokens": 126,
+        "reasoning_tokens": null,
+        "cached_input_tokens": 0,
+        "templated_input_tokens": 347,
+        "model": "unsloth/Qwen3.5-2B-GGUF"
+      }
+    ],
+    "resources": {
+      "peak_rss_mib": 1615.0,
+      "gpu_memory_mib": null,
+      "memory_limit_hit": false
+    },
+    "model": "unsloth/Qwen3.5-2B-GGUF",
+    "revision": "f6d5376be1edb4d416d56da11e5397a961aca8ae",
+    "qualification": "PROTOCOL_SMOKE_ONLY",
+    "os_network_denial_tested": false
+  },
+  "disconnected_small_output_smoke": {
+    "status": "FAIL",
+    "network_mode": "none",
+    "external_connection_blocked": true,
+    "real_local_model": true,
+    "mcp_transport": "stdio",
+    "model": "unsloth/Qwen3.5-2B-GGUF",
+    "runtime": "b11960",
+    "report_status": "PARTIAL",
+    "stages": [],
+    "resources": {
+      "peak_rss_mib": 2009.7,
+      "gpu_memory_mib": null,
+      "memory_limit_hit": false
+    },
+    "qualification": "DISCONNECTED_WORKFLOW_SMOKE_ONLY_NOT_MODEL_QUALITY_CERTIFICATION"
+  },
+  "prior_disconnected_attempts": [
+    {
+      "status": "FAIL",
+      "network_mode": "none",
+      "external_connection_blocked": true,
+      "real_local_model": true,
+      "mcp_transport": "stdio",
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "runtime": "b11960",
+      "report_status": "PARTIAL",
+      "stages": [
+        "purpose"
+      ],
+      "resources": {
+        "peak_rss_mib": 2131.9,
+        "gpu_memory_mib": null,
+        "memory_limit_hit": false
+      },
+      "qualification": "DISCONNECTED_WORKFLOW_SMOKE_ONLY_NOT_MODEL_QUALITY_CERTIFICATION"
+    },
+    {
+      "status": "FAIL",
+      "network_mode": "none",
+      "external_connection_blocked": true,
+      "real_local_model": true,
+      "mcp_transport": "stdio",
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "runtime": "b11960",
+      "report_status": "PARTIAL",
+      "stages": [],
+      "resources": {
+        "peak_rss_mib": 2008.0,
+        "gpu_memory_mib": null,
+        "memory_limit_hit": false
+      },
+      "qualification": "DISCONNECTED_WORKFLOW_SMOKE_ONLY_NOT_MODEL_QUALITY_CERTIFICATION"
+    }
+  ],
+  "not_measured": [
+    "Office GPU/model performance",
+    "Held-out business precision/recall",
+    "Copilot comparative advantage",
+    "Whole-session token or cost reduction"
+  ],
+  "pending": [
+    "Domain-owner task review",
+    "Office model qualification",
+    "Operational security review",
+    "Fine-tuning only if approved evaluation shows recurring gaps"
+  ]
+}

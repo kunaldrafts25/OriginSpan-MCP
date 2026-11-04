@@ -1,0 +1,13 @@
+{
+  "status": "PASSED",
+  "checks": [
+    "connect",
+    "application/snapshot selection",
+    "graph render",
+    "metadata search",
+    "separate human acceptance",
+    "value/predicate lineage",
+    "mobile viewport",
+    "no page errors"
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "tool": "Codanna 0.17.1",
+  "tasks": [
+    {
+      "task": "bank-person",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "paths": [
+        "src/ledger/transactionhistory/src/main/java/anthos/samples/bankofanthos/transactionhistory/Transaction.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/Transaction.java",
+        "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/Transaction.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/Transaction.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/TransactionValidator.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionValidator.java",
+        "src/accounts/userservice/db.py",
+        "src/accounts/userservice/tests/test_db.py",
+        "src/loadgenerator/locustfile.py",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/LedgerReaderCache.java"
+      ],
+      "seconds": 1.4692481000092812,
+      "returned_bytes": 15594,
+      "tool_calls": 1
+    },
+    {
+      "task": "bank-transfer",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "paths": [
+        "src/loadgenerator/locustfile.py",
+        "src/loadgenerator/locustfile.py",
+        "src/loadgenerator/locustfile.py",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/LedgerMonolithController.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/TransactionValidator.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionValidator.java",
+        "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/LedgerReader.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/LedgerReader.java",
+        "src/ledger/transactionhistory/src/main/java/anthos/samples/bankofanthos/transactionhistory/LedgerReader.java",
+        "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/BalanceReaderApplication.java"
+      ],
+      "seconds": 1.1412707000272349,
+      "returned_bytes": 25018,
+      "tool_calls": 1
+    },
+    {
+      "task": "clinic-owner",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 0.5,
+      "paths": [
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/Vets.java",
+        "src/main/java/org/springframework/samples/petclinic/model/Person.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/Specialty.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetType.java"
+      ],
+      "seconds": 1.1320409000036307,
+      "returned_bytes": 44027,
+      "tool_calls": 1
+    },
+    {
+      "task": "clinic-visit",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 0.5,
+      "reciprocal_rank": 0.1111111111111111,
+      "paths": [
+        "src/main/java/org/springframework/samples/petclinic/vet/Specialty.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/Vets.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Pet.java"
+      ],
+      "seconds": 0.9500552999670617,
+      "returned_bytes": 38368,
+      "tool_calls": 1
+    },
+    {
+      "task": "commerce-basket",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "paths": [
+        "saleor/checkout/models.py",
+        "saleor/account/models.py",
+        "saleor/order/models.py",
+        "saleor/checkout/models.py",
+        "saleor/order/models.py",
+        "saleor/order/models.py",
+        "saleor/order/models.py",
+        "saleor/checkout/models.py",
+        "saleor/order/models.py",
+        "saleor/order/models.py"
+      ],
+      "seconds": 1.362745199992787,
+      "returned_bytes": 26117,
+      "tool_calls": 1
+    },
+    {
+      "task": "commerce-variant",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "paths": [
+        "saleor/product/models.py",
+        "saleor/checkout/models.py",
+        "saleor/product/models.py",
+        "saleor/checkout/models.py",
+        "saleor/account/models.py",
+        "saleor/order/models.py",
+        "saleor/checkout/models.py",
+        "saleor/order/models.py",
+        "saleor/order/models.py",
+        "saleor/order/models.py"
+      ],
+      "seconds": 0.8258094000048004,
+      "returned_bytes": 19632,
+      "tool_calls": 1
+    },
+    {
+      "task": "different-wording",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 0.5,
+      "reciprocal_rank": 1.0,
+      "paths": [
+        "contract/model.py",
+        "customer/model.py",
+        "logging/trace.py"
+      ],
+      "seconds": 0.9169458000105806,
+      "returned_bytes": 4774,
+      "tool_calls": 1
+    },
+    {
+      "task": "ambiguous-cid",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 0.6666666666666666,
+      "reciprocal_rank": 1.0,
+      "paths": [
+        "contract/model.py",
+        "logging/trace.py",
+        "customer/model.py"
+      ],
+      "seconds": 0.8259092000080273,
+      "returned_bytes": 4743,
+      "tool_calls": 1
+    },
+    {
+      "task": "request-trace",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "paths": [
+        "logging/trace.py",
+        "contract/model.py",
+        "customer/model.py"
+      ],
+      "seconds": 1.0299330999841914,
+      "returned_bytes": 4784,
+      "tool_calls": 1
+    },
+    {
+      "task": "unknown",
+      "status": "SCORED",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "paths": [
+        "customer/model.py",
+        "contract/model.py",
+        "logging/trace.py"
+      ],
+      "seconds": 0.8910353999817744,
+      "returned_bytes": 4743,
+      "tool_calls": 1
+    }
+  ],
+  "limitations": [
+    "Different default embedding models and chunks",
+    "No cross-tool business-answer or symbol-precision claim",
+    "Codanna symbol semantic search was run; its separate document-search tool was not combined",
+    "Top-10 match budget shared, 160KB output cap; actual payload sizes differ",
+    "Small development tasks; not an independent or universal ranking"
+  ]
+}

@@ -1,0 +1,754 @@
+{
+  "at": "2026-11-01T22:18:40.932858+00:00",
+  "manifest_sha256": "367ca828b733801d856a026dd6d7c8cde16dddb374093606000137073d27d84a",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.6 (tags/v3.13.6:4e66535, Aug  6 2025, 14:36:00) [MSC v.1944 64 bit (AMD64)]",
+  "host_model": null,
+  "host_client": null,
+  "host_answer_evaluation": "NOT_RUN; no host model invoked",
+  "cost": null,
+  "token_usage": null,
+  "measurements": {
+    "bank": {
+      "status": "COMPLETED",
+      "cold_seconds": 28.15887320000911,
+      "unchanged_incremental_seconds": 8.832308100012597,
+      "python_peak_allocated_bytes": 13465034,
+      "process_peak_rss": "NOT_MEASURED; Python allocations exclude native model memory",
+      "evidence_count": 3106,
+      "snapshot": {
+        "content_sha256": "9c48d0a9214a83c11b1a186560286d6d097336b994f24f2070868fa6ba7f25a7",
+        "files": 329,
+        "bytes": 866000,
+        "excluded_count": 0,
+        "excluded": []
+      },
+      "neural": {
+        "available": false,
+        "reason": "No approved local embedding model configured",
+        "profile": null
+      },
+      "structure_reparsed": true,
+      "model_memory": "not measured separately",
+      "banking_gate": {
+        "endpoints": 39,
+        "tables": 3,
+        "columns": 23,
+        "passed": true,
+        "exact_sources_match": false
+      }
+    },
+    "petclinic": {
+      "status": "COMPLETED",
+      "cold_seconds": 5.359754599980079,
+      "unchanged_incremental_seconds": 0.8038591000367887,
+      "python_peak_allocated_bytes": 3951554,
+      "process_peak_rss": "NOT_MEASURED; Python allocations exclude native model memory",
+      "evidence_count": 762,
+      "snapshot": {
+        "content_sha256": "c8afb51ea8405d04357c24f14bb50b25cd4887c8f45bd3688ec9c9ca41142578",
+        "files": 42,
+        "bytes": 102791,
+        "excluded_count": 0,
+        "excluded": []
+      },
+      "neural": {
+        "available": false,
+        "reason": "No approved local embedding model configured",
+        "profile": null
+      },
+      "structure_reparsed": true,
+      "model_memory": "not measured separately"
+    },
+    "saleor": {
+      "status": "COMPLETED",
+      "cold_seconds": 1.8443995999987237,
+      "unchanged_incremental_seconds": 0.7716886000125669,
+      "python_peak_allocated_bytes": 4763182,
+      "process_peak_rss": "NOT_MEASURED; Python allocations exclude native model memory",
+      "evidence_count": 1214,
+      "snapshot": {
+        "content_sha256": "af72f56a0c7e61dad09b5eaeb9492b6e6169cc3e5eb58743d1887b5409aacb8d",
+        "files": 6,
+        "bytes": 107665,
+        "excluded_count": 0,
+        "excluded": []
+      },
+      "neural": {
+        "available": false,
+        "reason": "No approved local embedding model configured",
+        "profile": null
+      },
+      "structure_reparsed": true,
+      "model_memory": "not measured separately"
+    },
+    "ambiguity": {
+      "status": "COMPLETED",
+      "cold_seconds": 0.19590880000032485,
+      "unchanged_incremental_seconds": 0.06692990002920851,
+      "python_peak_allocated_bytes": 157250,
+      "process_peak_rss": "NOT_MEASURED; Python allocations exclude native model memory",
+      "evidence_count": 29,
+      "snapshot": {
+        "content_sha256": "e6cc1db459b313978fbfc667c8f65514a30181af5fba39500cda7468ce0f29fd",
+        "files": 5,
+        "bytes": 939,
+        "excluded_count": 0,
+        "excluded": []
+      },
+      "neural": {
+        "available": false,
+        "reason": "No approved local embedding model configured",
+        "profile": null
+      },
+      "structure_reparsed": true,
+      "model_memory": "not measured separately"
+    }
+  },
+  "competitors": [
+    {
+      "name": "Codanna",
+      "version": "0.17.1",
+      "status": "NOT_RUN",
+      "reason": "Awaiting recorded executable installation and same-task output"
+    },
+    {
+      "name": "CodeGraphContext",
+      "version": "0.5.7",
+      "status": "NOT_RUN",
+      "reason": "Requires an isolated install and graph backend"
+    },
+    {
+      "name": "Serena",
+      "version": "2.1.0",
+      "status": "NOT_RUN",
+      "reason": "Requires approved language-server installation; application GPL is not bundled"
+    },
+    {
+      "name": "semantic-code-mcp",
+      "version": "0.4.1",
+      "status": "NOT_RUN",
+      "reason": "Requires isolated model/runtime install"
+    }
+  ],
+  "tasks": [
+    {
+      "task": "bank-person",
+      "source": "bank",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "returned_bytes": 7619,
+      "latency_seconds": 0.1280613000271842,
+      "tool_calls": 1,
+      "paths": [
+        "src/frontend/frontend.py",
+        "src/loadgenerator/locustfile.py",
+        "src/accounts/userservice/userservice.py",
+        "src/accounts/userservice/tests/constants.py",
+        "src/accounts/userservice/tests/constants.py",
+        "src/accounts/userservice/tests/test_userservice.py",
+        "src/accounts/userservice/userservice.py",
+        "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+        "src/accounts/userservice/db.py",
+        "src/accounts/contacts/tests/test_contacts.py"
+      ],
+      "evidence_ids": [
+        "ev-f9d8b6e3e55ad853929dde93",
+        "ev-f78ed6bd56141fec25f5ac89",
+        "ev-9992bc12039311ea8d5dacb5",
+        "ev-f83f4d9e60394201ebbd8ff5",
+        "ev-6f501465ba75d6f4c48cb194",
+        "ev-cecb684bc45a69860dd13595",
+        "ev-6b0943342e53291a108e9347",
+        "ev-f8b46bde499dce56ea3f86b6",
+        "ev-aa5b3320c87cdff974c0295b",
+        "ev-89ca83d05be35b76abb7897e"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "bank-person",
+      "source": "bank",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 0.3333333333333333,
+      "returned_bytes": 7619,
+      "latency_seconds": 0.1476505000027828,
+      "tool_calls": 1,
+      "paths": [
+        "src/frontend/frontend.py",
+        "src/loadgenerator/locustfile.py",
+        "src/accounts/userservice/userservice.py",
+        "src/accounts/userservice/tests/constants.py",
+        "src/accounts/userservice/tests/constants.py",
+        "src/accounts/userservice/tests/test_userservice.py",
+        "src/accounts/userservice/userservice.py",
+        "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+        "src/accounts/userservice/db.py",
+        "src/accounts/contacts/tests/test_contacts.py"
+      ],
+      "evidence_ids": [
+        "ev-f9d8b6e3e55ad853929dde93",
+        "ev-f78ed6bd56141fec25f5ac89",
+        "ev-9992bc12039311ea8d5dacb5",
+        "ev-f83f4d9e60394201ebbd8ff5",
+        "ev-6f501465ba75d6f4c48cb194",
+        "ev-cecb684bc45a69860dd13595",
+        "ev-6b0943342e53291a108e9347",
+        "ev-f8b46bde499dce56ea3f86b6",
+        "ev-aa5b3320c87cdff974c0295b",
+        "ev-89ca83d05be35b76abb7897e"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "bank-transfer",
+      "source": "bank",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "returned_bytes": 9660,
+      "latency_seconds": 0.10695700003998354,
+      "tool_calls": 1,
+      "paths": [
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/ExceptionMessages.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/ExceptionMessages.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionValidator.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/TransactionValidator.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/ExceptionMessages.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/ExceptionMessages.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionValidator.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/TransactionValidator.java",
+        "src/loadgenerator/locustfile.py",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionValidator.java"
+      ],
+      "evidence_ids": [
+        "ev-b192e20d3259aec1083ac09a",
+        "ev-d5454c05c7d549dcd794b63f",
+        "ev-77301a753ccce4c5500d59bd",
+        "ev-824c312c20aa51370faca827",
+        "ev-7e69578dea202975dc8fe9d6",
+        "ev-ca6d29d30d3a7d187379c36e",
+        "ev-a17672ef6c88271a0011e98d",
+        "ev-59f748be16d4b743cbe36ae0",
+        "ev-8cb606a8fdca35c2a0effba9",
+        "ev-01902bdf2b44d5b0dc0b0e91"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "bank-transfer",
+      "source": "bank",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "returned_bytes": 9660,
+      "latency_seconds": 0.16373100003693253,
+      "tool_calls": 1,
+      "paths": [
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/ExceptionMessages.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/ExceptionMessages.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionValidator.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/TransactionValidator.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/ExceptionMessages.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/ExceptionMessages.java",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionValidator.java",
+        "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/TransactionValidator.java",
+        "src/loadgenerator/locustfile.py",
+        "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionValidator.java"
+      ],
+      "evidence_ids": [
+        "ev-b192e20d3259aec1083ac09a",
+        "ev-d5454c05c7d549dcd794b63f",
+        "ev-77301a753ccce4c5500d59bd",
+        "ev-824c312c20aa51370faca827",
+        "ev-7e69578dea202975dc8fe9d6",
+        "ev-ca6d29d30d3a7d187379c36e",
+        "ev-a17672ef6c88271a0011e98d",
+        "ev-59f748be16d4b743cbe36ae0",
+        "ev-8cb606a8fdca35c2a0effba9",
+        "ev-01902bdf2b44d5b0dc0b0e91"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "clinic-owner",
+      "source": "petclinic",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "returned_bytes": 15597,
+      "latency_seconds": 0.022436700004618615,
+      "tool_calls": 1,
+      "paths": [
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "LICENSE.txt",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "LICENSE.txt",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
+        "README.md",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java"
+      ],
+      "evidence_ids": [
+        "ev-760ebad67a416a64c8e951bd",
+        "ev-dbde85a222d681e2ce657e53",
+        "ev-4b94b097f913f73682282cd1",
+        "ev-f0ee33578367a51fe43be97a",
+        "ev-41c02ffa09deb48893c06f7a",
+        "ev-f6b7a9a4151410fae0e946db",
+        "ev-4363e83801ffe1a459e0eef1",
+        "ev-9a6738c5864f47654a757a16",
+        "ev-de486818fe4cfcbebc8e8da0",
+        "ev-c9c7bd003dc59efa349a1c14"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "clinic-owner",
+      "source": "petclinic",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "returned_bytes": 15597,
+      "latency_seconds": 0.024064500001259148,
+      "tool_calls": 1,
+      "paths": [
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "LICENSE.txt",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "LICENSE.txt",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
+        "README.md",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java"
+      ],
+      "evidence_ids": [
+        "ev-760ebad67a416a64c8e951bd",
+        "ev-dbde85a222d681e2ce657e53",
+        "ev-4b94b097f913f73682282cd1",
+        "ev-f0ee33578367a51fe43be97a",
+        "ev-41c02ffa09deb48893c06f7a",
+        "ev-f6b7a9a4151410fae0e946db",
+        "ev-4363e83801ffe1a459e0eef1",
+        "ev-9a6738c5864f47654a757a16",
+        "ev-de486818fe4cfcbebc8e8da0",
+        "ev-c9c7bd003dc59efa349a1c14"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "clinic-visit",
+      "source": "petclinic",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "returned_bytes": 11302,
+      "latency_seconds": 0.022269100008998066,
+      "tool_calls": 1,
+      "paths": [
+        "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java"
+      ],
+      "evidence_ids": [
+        "ev-6901fdf8015305da08ec5258",
+        "ev-c5f5e1b7c412a87789e7bc17",
+        "ev-9d415dc3c783a45cae15b92f",
+        "ev-57ad9cb6700216a159dd3521",
+        "ev-d9e587f2580e16525536dd6c",
+        "ev-c97b4a630a8c6016fe999573",
+        "ev-eb9e7b5865097c05bc616818",
+        "ev-32391546e09278e96926141d",
+        "ev-c9c7bd003dc59efa349a1c14",
+        "ev-9de85d10c5db4577dabdeb1a"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "clinic-visit",
+      "source": "petclinic",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "returned_bytes": 11302,
+      "latency_seconds": 0.021719600015785545,
+      "tool_calls": 1,
+      "paths": [
+        "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java"
+      ],
+      "evidence_ids": [
+        "ev-6901fdf8015305da08ec5258",
+        "ev-c5f5e1b7c412a87789e7bc17",
+        "ev-9d415dc3c783a45cae15b92f",
+        "ev-57ad9cb6700216a159dd3521",
+        "ev-d9e587f2580e16525536dd6c",
+        "ev-c97b4a630a8c6016fe999573",
+        "ev-eb9e7b5865097c05bc616818",
+        "ev-32391546e09278e96926141d",
+        "ev-c9c7bd003dc59efa349a1c14",
+        "ev-9de85d10c5db4577dabdeb1a"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "commerce-basket",
+      "source": "saleor",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "returned_bytes": 10428,
+      "latency_seconds": 0.04757449997123331,
+      "tool_calls": 1,
+      "paths": [
+        "saleor/product/models.py",
+        "saleor/product/models.py",
+        "saleor/product/models.py",
+        "saleor/product/models.py",
+        "saleor/product/models.py",
+        "README.md",
+        "saleor/product/models.py",
+        "README.md",
+        "saleor/account/models.py",
+        "saleor/product/models.py"
+      ],
+      "evidence_ids": [
+        "ev-142aa15a5f5c71f0457c2356",
+        "ev-605492a939195b48d6518ec0",
+        "ev-d790dd5501d49f83985b353f",
+        "ev-9f4a8db93965f72943e9ee8b",
+        "ev-d45b5c9b707fe34f0e27d1c2",
+        "ev-b262096673207bba66f630d4",
+        "ev-855fd15807e489a04dcf1f54",
+        "ev-9e7de1ed6395884589dea7b8",
+        "ev-48840616518881446a4da174",
+        "ev-59bb80d885aff299276e7560"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "commerce-basket",
+      "source": "saleor",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 0.0,
+      "reciprocal_rank": 0,
+      "returned_bytes": 10428,
+      "latency_seconds": 0.04303000000072643,
+      "tool_calls": 1,
+      "paths": [
+        "saleor/product/models.py",
+        "saleor/product/models.py",
+        "saleor/product/models.py",
+        "saleor/product/models.py",
+        "saleor/product/models.py",
+        "README.md",
+        "saleor/product/models.py",
+        "README.md",
+        "saleor/account/models.py",
+        "saleor/product/models.py"
+      ],
+      "evidence_ids": [
+        "ev-142aa15a5f5c71f0457c2356",
+        "ev-605492a939195b48d6518ec0",
+        "ev-d790dd5501d49f83985b353f",
+        "ev-9f4a8db93965f72943e9ee8b",
+        "ev-d45b5c9b707fe34f0e27d1c2",
+        "ev-b262096673207bba66f630d4",
+        "ev-855fd15807e489a04dcf1f54",
+        "ev-9e7de1ed6395884589dea7b8",
+        "ev-48840616518881446a4da174",
+        "ev-59bb80d885aff299276e7560"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "commerce-variant",
+      "source": "saleor",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 0.5,
+      "returned_bytes": 13532,
+      "latency_seconds": 0.03487129998393357,
+      "tool_calls": 1,
+      "paths": [
+        "saleor/order/models.py",
+        "saleor/product/models.py",
+        "saleor/order/models.py",
+        "saleor/product/models.py",
+        "saleor/order/models.py",
+        "README.md",
+        "README.md",
+        "saleor/account/models.py",
+        "saleor/product/models.py",
+        "README.md"
+      ],
+      "evidence_ids": [
+        "ev-e57f5e9099e6737459609354",
+        "ev-14ef000cecf20d678833cc55",
+        "ev-ae317881a5ed4ef280802e62",
+        "ev-d45b5c9b707fe34f0e27d1c2",
+        "ev-101635489c70994aff9e7667",
+        "ev-cc56dca5f3920bd056b61c24",
+        "ev-7b2ee9388dd8a9cd2fba881a",
+        "ev-6a3957bfb7a503ae27b3aa48",
+        "ev-a852d95added7352e4acab7f",
+        "ev-3738eecfb77c847f4fc30fd0"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "commerce-variant",
+      "source": "saleor",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 0.5,
+      "returned_bytes": 13532,
+      "latency_seconds": 0.042887400020845234,
+      "tool_calls": 1,
+      "paths": [
+        "saleor/order/models.py",
+        "saleor/product/models.py",
+        "saleor/order/models.py",
+        "saleor/product/models.py",
+        "saleor/order/models.py",
+        "README.md",
+        "README.md",
+        "saleor/account/models.py",
+        "saleor/product/models.py",
+        "README.md"
+      ],
+      "evidence_ids": [
+        "ev-e57f5e9099e6737459609354",
+        "ev-14ef000cecf20d678833cc55",
+        "ev-ae317881a5ed4ef280802e62",
+        "ev-d45b5c9b707fe34f0e27d1c2",
+        "ev-101635489c70994aff9e7667",
+        "ev-cc56dca5f3920bd056b61c24",
+        "ev-7b2ee9388dd8a9cd2fba881a",
+        "ev-6a3957bfb7a503ae27b3aa48",
+        "ev-a852d95added7352e4acab7f",
+        "ev-3738eecfb77c847f4fc30fd0"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "different-wording",
+      "source": "ambiguity",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "returned_bytes": 2159,
+      "latency_seconds": 0.0080792999942787,
+      "tool_calls": 1,
+      "paths": [
+        "dictionary.md",
+        "contract/model.py"
+      ],
+      "evidence_ids": [
+        "ev-b651e10139c85b21f61ece15",
+        "ev-d5c6c3ea360951fdd479e634"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "different-wording",
+      "source": "ambiguity",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "returned_bytes": 2159,
+      "latency_seconds": 0.006157000025268644,
+      "tool_calls": 1,
+      "paths": [
+        "dictionary.md",
+        "contract/model.py"
+      ],
+      "evidence_ids": [
+        "ev-b651e10139c85b21f61ece15",
+        "ev-d5c6c3ea360951fdd479e634"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "ambiguous-cid",
+      "source": "ambiguity",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "returned_bytes": 6514,
+      "latency_seconds": 0.013149400008842349,
+      "tool_calls": 1,
+      "paths": [
+        "contract/model.py",
+        "customer/model.py",
+        "contract/model.py",
+        "contract/model.py",
+        "customer/model.py",
+        "contract/model.py",
+        "customer/model.py",
+        "dictionary.md",
+        "customer/model.py"
+      ],
+      "evidence_ids": [
+        "ev-49d80d6fbcd95167198ca74b",
+        "ev-bb18b52b685f533d34100fad",
+        "ev-e547b2ff01b1d575a899f2bc",
+        "ev-d5c6c3ea360951fdd479e634",
+        "ev-56eeead89e7c32493f8a5ef2",
+        "ev-4a0fd425cae21af892e2b108",
+        "ev-3b37b66f496a97fcf0d3bcd6",
+        "ev-b651e10139c85b21f61ece15",
+        "ev-2c92a2eeeab2ec285fa19e5a"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "ambiguous-cid",
+      "source": "ambiguity",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "returned_bytes": 7224,
+      "latency_seconds": 0.01815410004928708,
+      "tool_calls": 1,
+      "paths": [
+        "contract/model.py",
+        "customer/model.py",
+        "contract/model.py",
+        "logging/trace.py",
+        "logging/trace.py",
+        "contract/model.py",
+        "customer/model.py",
+        "contract/model.py",
+        "customer/model.py",
+        "dictionary.md"
+      ],
+      "evidence_ids": [
+        "ev-49d80d6fbcd95167198ca74b",
+        "ev-bb18b52b685f533d34100fad",
+        "ev-e547b2ff01b1d575a899f2bc",
+        "ev-09eebeebbbb02e43848c04cd",
+        "ev-5d0633e2df13e0b8771ba271",
+        "ev-d5c6c3ea360951fdd479e634",
+        "ev-56eeead89e7c32493f8a5ef2",
+        "ev-4a0fd425cae21af892e2b108",
+        "ev-3b37b66f496a97fcf0d3bcd6",
+        "ev-b651e10139c85b21f61ece15"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "request-trace",
+      "source": "ambiguity",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "returned_bytes": 2164,
+      "latency_seconds": 0.01546939997933805,
+      "tool_calls": 1,
+      "paths": [
+        "logging/trace.py",
+        "dictionary.md"
+      ],
+      "evidence_ids": [
+        "ev-739527eb9f48adc167a5c5f5",
+        "ev-b651e10139c85b21f61ece15"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "request-trace",
+      "source": "ambiguity",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "returned_bytes": 2164,
+      "latency_seconds": 0.016831899993121624,
+      "tool_calls": 1,
+      "paths": [
+        "logging/trace.py",
+        "dictionary.md"
+      ],
+      "evidence_ids": [
+        "ev-739527eb9f48adc167a5c5f5",
+        "ev-b651e10139c85b21f61ece15"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "unknown",
+      "source": "ambiguity",
+      "mode": "lexical",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "returned_bytes": 3303,
+      "latency_seconds": 0.003565400023944676,
+      "tool_calls": 1,
+      "paths": [
+        "unknown.py",
+        "unknown.py",
+        "unknown.py",
+        "dictionary.md"
+      ],
+      "evidence_ids": [
+        "ev-0235265e42070001a1b2d497",
+        "ev-8e8de36d8df92f07d6876fcb",
+        "ev-a0bcf948da81eceb636dcbeb",
+        "ev-b651e10139c85b21f61ece15"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    },
+    {
+      "task": "unknown",
+      "source": "ambiguity",
+      "mode": "hybrid",
+      "relevant_path_recall_at_10": 1.0,
+      "reciprocal_rank": 1.0,
+      "returned_bytes": 3380,
+      "latency_seconds": 0.005231800023466349,
+      "tool_calls": 1,
+      "paths": [
+        "unknown.py",
+        "unknown.py",
+        "unknown.py",
+        "dictionary.md"
+      ],
+      "evidence_ids": [
+        "ev-0235265e42070001a1b2d497",
+        "ev-8e8de36d8df92f07d6876fcb",
+        "ev-a0bcf948da81eceb636dcbeb",
+        "ev-b651e10139c85b21f61ece15"
+      ],
+      "business_interpretation": "NOT_EVALUATED"
+    }
+  ],
+  "disk_bytes": 49202334,
+  "limitations": [
+    "Small fixed task set is not a universal ranking",
+    "Python allocations omit native model RSS",
+    "No host-AI answers, provider tokens or provider costs measured",
+    "Compiler-reference precision requires separate reviewed fixtures",
+    "Competitor statuses must be replaced only by recorded executed results"
+  ]
+}

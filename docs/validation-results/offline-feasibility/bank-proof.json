@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "network_mode": "none",
+  "external_connection_blocked": true,
+  "real_local_model": true,
+  "mcp_transport": "stdio",
+  "repository": "GoogleCloudPlatform/bank-of-anthos",
+  "source_revision": "db35fea9fd090150e2398106aadb475576f80d94",
+  "files": 321,
+  "evidence_count": 4076,
+  "index_seconds": 23.829,
+  "controller_seconds": 120.035,
+  "total_seconds": 231.353,
+  "stages": [
+    "purpose",
+    "architecture",
+    "demographics",
+    "sql",
+    "transformations",
+    "handoff"
+  ],
+  "observed_sections": [
+    "architecture",
+    "sql",
+    "handoff"
+  ],
+  "counts": {
+    "tools": 15,
+    "model": 3
+  },
+  "field_inventory_records": 67,
+  "model_evidence_counts": {
+    "purpose": 12,
+    "demographics": 12,
+    "transformations": 12
+  },
+  "semantic_summary_only": true,
+  "neural_embeddings_enabled": false,
+  "semantic_fields": 12,
+  "model_field_annotations": 12,
+  "unresolved_field_annotations": 0,
+  "reported_input_tokens": 4141,
+  "reported_output_tokens": 784,
+  "reasoning_tokens": null,
+  "resources": {
+    "peak_rss_mib": 2233.4,
+    "gpu_memory_mib": null,
+    "memory_limit_hit": false
+  },
+  "citation_references_valid": true,
+  "model": "unsloth/Qwen3.5-2B-GGUF",
+  "model_sha256": "aaf42c8b7c3cab2bf3d69c355048d4a0ee9973d48f16c731c0520ee914699223",
+  "weights_changed": false,
+  "qualification": "WORKFLOW_FEASIBILITY_ONLY_NOT_BUSINESS_ACCURACY_CERTIFICATION",
+  "gaps": [
+    "orm: 12/60 records collected; continuation offset 12 remains available through get_discovery_section",
+    "documentation: 12/124 records collected; continuation offset 12 remains available through get_discovery_section",
+    "Local model annotated 12 selected field evidence records; the inventory is not fully business-classified"
+  ],
+  "container_memory_peak": "2620665856",
+  "container_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+}

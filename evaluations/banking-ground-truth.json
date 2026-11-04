@@ -1,0 +1,24 @@
+{
+  "repository":"https://github.com/GoogleCloudPlatform/bank-of-anthos",
+  "revision":"db35fea9fd090150e2398106aadb475576f80d94",
+  "license":"Apache-2.0",
+  "scope":"Manually reviewed declared routes and DDL at this revision; excludes automatic HEAD/OPTIONS, runtime dependency certainty and application correctness.",
+  "declared_routes":{
+    "src/accounts/contacts/contacts.py":["GET /version","GET /ready","GET /contacts/<username>","POST /contacts/<username>"],
+    "src/accounts/userservice/userservice.py":["GET /version","GET /ready","POST /users","GET /login"],
+    "src/frontend/frontend.py":["GET /version","GET /ready","GET /whereami","GET /","GET /home","POST /payment","POST /deposit","GET /login","POST /login","GET /consent","POST /consent","GET /signup","POST /signup","POST /logout"],
+    "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/BalanceReaderController.java":["GET /version","GET /ready","GET /healthy","GET /balances/{accountId}"],
+    "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/LedgerWriterController.java":["GET /version","GET /ready","POST /transactions"],
+    "src/ledger/transactionhistory/src/main/java/anthos/samples/bankofanthos/transactionhistory/TransactionHistoryController.java":["GET /version","GET /ready","GET /healthy","GET /transactions/{accountId}"],
+    "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/LedgerMonolithController.java":["GET /version","GET /ready","GET /healthy","POST /transactions","GET /balances/{accountId}","GET /transactions/{accountId}"]
+  },
+  "physical_tables":["users","contacts","transactions"],
+  "ddl_fields":{
+    "users":["accountid","username","passhash","firstname","lastname","birthday","timezone","address","state","zip","ssn"],
+    "contacts":["username","label","account_num","routing_num","is_external"],
+    "transactions":["transaction_id","from_acct","to_acct","from_route","to_route","amount","timestamp"]
+  },
+  "customer_attribute_names":["accountid","firstname","lastname","birthday","address","state","zip","ssn"],
+  "expected_native_queries":2,
+  "expected_jpql_queries":8
+}

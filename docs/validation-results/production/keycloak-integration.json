@@ -1,0 +1,16 @@
+{
+  "status": "PASSED",
+  "identity_provider": "Keycloak 26.4.0",
+  "metadata_database": "PostgreSQL 18.6",
+  "checks": [
+    "OIDC signature/audience/issuer",
+    "HTTP MCP",
+    "managed upload",
+    "persistent job",
+    "PostgreSQL full text",
+    "project isolation",
+    "review permission denial"
+  ],
+  "client": "official Python MCP SDK 2.3.0",
+  "copilot": "NOT_RUN"
+}

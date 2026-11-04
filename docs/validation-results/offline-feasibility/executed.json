@@ -1,0 +1,561 @@
+{
+  "date": "2026-11-04",
+  "status": "PASS",
+  "scope": "Offline workflow feasibility; not independent business-accuracy qualification",
+  "source_sha256_at_publication": "a369d725be7f6d5064cb38bdc7fee5049271fc94d492bfe5283a065f7944111c",
+  "regression": {
+    "passed": 142,
+    "skipped": 1,
+    "offline_focused_passed": 50
+  },
+  "bank_guard_replay": {
+    "status": "PASS",
+    "annotations": 12,
+    "default_bank_results_unchanged": true,
+    "scope": "Replayed saved real-model annotations through added uncertainty/definition guards; no new inference or timing claim"
+  },
+  "packaging": {
+    "wheel": "originspan_mcp-0.5.1-py3-none-any.whl",
+    "sha256": "2f29cedf97e12f74855b0cdc4b30e0fcbd6ea76a11c36492d56edbf89a6b6d8d",
+    "package_index_access": false,
+    "installed_wheel_import_validated": true,
+    "dependencies": "Preinstalled dependencies; not a fresh dependency-provisioning test"
+  },
+  "final_offline_bank": {
+    "status": "PASS",
+    "network_mode": "none",
+    "external_connection_blocked": true,
+    "real_local_model": true,
+    "mcp_transport": "stdio",
+    "repository": "GoogleCloudPlatform/bank-of-anthos",
+    "source_revision": "db35fea9fd090150e2398106aadb475576f80d94",
+    "files": 321,
+    "evidence_count": 4076,
+    "index_seconds": 23.829,
+    "controller_seconds": 120.035,
+    "total_seconds": 231.353,
+    "stages": [
+      "purpose",
+      "architecture",
+      "demographics",
+      "sql",
+      "transformations",
+      "handoff"
+    ],
+    "observed_sections": [
+      "architecture",
+      "sql",
+      "handoff"
+    ],
+    "counts": {
+      "tools": 15,
+      "model": 3
+    },
+    "field_inventory_records": 67,
+    "model_evidence_counts": {
+      "purpose": 12,
+      "demographics": 12,
+      "transformations": 12
+    },
+    "semantic_summary_only": true,
+    "neural_embeddings_enabled": false,
+    "semantic_fields": 12,
+    "model_field_annotations": 12,
+    "unresolved_field_annotations": 0,
+    "reported_input_tokens": 4141,
+    "reported_output_tokens": 784,
+    "reasoning_tokens": null,
+    "resources": {
+      "peak_rss_mib": 2233.4,
+      "gpu_memory_mib": null,
+      "memory_limit_hit": false
+    },
+    "citation_references_valid": true,
+    "model": "unsloth/Qwen3.5-2B-GGUF",
+    "model_sha256": "aaf42c8b7c3cab2bf3d69c355048d4a0ee9973d48f16c731c0520ee914699223",
+    "weights_changed": false,
+    "qualification": "WORKFLOW_FEASIBILITY_ONLY_NOT_BUSINESS_ACCURACY_CERTIFICATION",
+    "gaps": [
+      "orm: 12/60 records collected; continuation offset 12 remains available through get_discovery_section",
+      "documentation: 12/124 records collected; continuation offset 12 remains available through get_discovery_section",
+      "Local model annotated 12 selected field evidence records; the inventory is not fully business-classified"
+    ],
+    "container_memory_peak": "2620665856",
+    "container_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+  },
+  "first_successful_streamed_run": {
+    "status": "PASS",
+    "network_mode": "none",
+    "external_connection_blocked": true,
+    "real_local_model": true,
+    "mcp_transport": "stdio",
+    "repository": "GoogleCloudPlatform/bank-of-anthos",
+    "source_revision": "db35fea9fd090150e2398106aadb475576f80d94",
+    "files": 321,
+    "evidence_count": 4076,
+    "index_seconds": 34.289,
+    "controller_seconds": 113.421,
+    "total_seconds": 221.724,
+    "stages": [
+      "purpose",
+      "architecture",
+      "demographics",
+      "sql",
+      "transformations",
+      "handoff"
+    ],
+    "observed_sections": [
+      "architecture",
+      "sql",
+      "handoff"
+    ],
+    "counts": {
+      "tools": 15,
+      "model": 3
+    },
+    "reported_input_tokens": 3670,
+    "reported_output_tokens": 475,
+    "reasoning_tokens": null,
+    "resources": {
+      "peak_rss_mib": 2232.0,
+      "gpu_memory_mib": null,
+      "memory_limit_hit": false
+    },
+    "citation_references_valid": true,
+    "model": "unsloth/Qwen3.5-2B-GGUF",
+    "model_sha256": "aaf42c8b7c3cab2bf3d69c355048d4a0ee9973d48f16c731c0520ee914699223",
+    "weights_changed": false,
+    "qualification": "WORKFLOW_FEASIBILITY_ONLY_NOT_BUSINESS_ACCURACY_CERTIFICATION",
+    "gaps": [
+      "orm: 12/60 records collected; continuation offset 12 remains available through get_discovery_section",
+      "documentation: 12/124 records collected; continuation offset 12 remains available through get_discovery_section"
+    ],
+    "container_memory_peak": "2562260992",
+    "container_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+  },
+  "local_pipeline_token_comparison": {
+    "previous_input": 14231,
+    "current_input": 4141,
+    "previous_output": 2162,
+    "current_output": 784,
+    "previous_calls": 6,
+    "current_calls": 3,
+    "input_reduction_percent": 70.9,
+    "output_reduction_percent": 63.74
+  },
+  "calibration": {
+    "passed": 10,
+    "total": 10
+  },
+  "format_normalized_calibration": {
+    "passed": 10,
+    "total": 10,
+    "results": [
+      {
+        "id": "customer-alias",
+        "passed": true,
+        "decision": "customer_identifier",
+        "expected": "customer_identifier",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "customer_identifier",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "C_ID",
+          "entity": "Customer"
+        }
+      },
+      {
+        "id": "contract-alias",
+        "passed": true,
+        "decision": "contract_identifier",
+        "expected": "contract_identifier",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "contract_identifier",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "C_ID",
+          "entity": "Contract"
+        }
+      },
+      {
+        "id": "logging-alias",
+        "passed": true,
+        "decision": "correlation_identifier",
+        "expected": "correlation_identifier",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "correlation_identifier",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "cid",
+          "entity": "RequestContext"
+        }
+      },
+      {
+        "id": "unfamiliar-dictionary",
+        "passed": true,
+        "decision": "contract_renewal_date",
+        "expected": "contract_renewal_date",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "contract_renewal_date",
+          "status": "hypothesis",
+          "citations": [
+            "E000001",
+            "E000002"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "X17",
+          "entity": "Policy"
+        }
+      },
+      {
+        "id": "no-context",
+        "passed": true,
+        "decision": "unresolved",
+        "expected": "unresolved",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "unresolved",
+          "status": "unresolved",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "consistency_guard",
+          "uncertainty_reason": "The model explicitly returned an uncertainty label.",
+          "name": "X17",
+          "entity": ""
+        }
+      },
+      {
+        "id": "contradictory-definition",
+        "passed": true,
+        "decision": "ambiguous",
+        "expected": "ambiguous",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "ambiguous",
+          "status": "unresolved",
+          "citations": [
+            "E000001",
+            "E000002"
+          ],
+          "approved": false,
+          "origin": "consistency_guard",
+          "rejected_model_proposal": {
+            "meaning": "customer_identifier",
+            "status": "unresolved"
+          },
+          "competing_definition_refs": [
+            "E000001",
+            "E000002"
+          ],
+          "uncertainty_reason": "Distinct unreviewed definitions share this field scope; they may be compatible, but require review.",
+          "name": "C_ID",
+          "entity": ""
+        }
+      },
+      {
+        "id": "misleading-date",
+        "passed": true,
+        "decision": "unresolved",
+        "expected": "unresolved",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "unresolved",
+          "status": "unresolved",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "consistency_guard",
+          "uncertainty_reason": "The model explicitly returned an uncertainty label.",
+          "name": "dt_b",
+          "entity": "Customer"
+        }
+      },
+      {
+        "id": "country-not-nationality",
+        "passed": true,
+        "decision": "servicing_country",
+        "expected": "servicing_country",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "servicing_country",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "nat_cd",
+          "entity": "Account"
+        }
+      },
+      {
+        "id": "multilingual-meaning",
+        "passed": true,
+        "decision": "date_of_birth",
+        "expected": "date_of_birth",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "date_of_birth",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "data_nascimento",
+          "entity": "Pessoa"
+        }
+      },
+      {
+        "id": "language-not-nationality",
+        "passed": true,
+        "decision": "preferred_language",
+        "expected": "preferred_language",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "preferred_language",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "lng_pref",
+          "entity": "NotificationPreferences"
+        }
+      }
+    ],
+    "rubric": "Post-hoc normalization of case, whitespace, hyphens and underscores only; original strict scores retained. No synonyms or business ontology matching."
+  },
+  "format_normalized_recheck": {
+    "passed": 10,
+    "total": 10,
+    "results": [
+      {
+        "id": "owner-key",
+        "passed": true,
+        "decision": "customer_identifier",
+        "expected": "customer_identifier",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "customer_identifier",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "AID",
+          "entity": "AccountOwnership"
+        }
+      },
+      {
+        "id": "application-key",
+        "passed": true,
+        "decision": "loan_application_identifier",
+        "expected": "loan_application_identifier",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "loan_application_identifier",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "AID",
+          "entity": "LoanDecision"
+        }
+      },
+      {
+        "id": "request-link",
+        "passed": true,
+        "decision": "correlation_identifier",
+        "expected": "correlation_identifier",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "correlation_identifier",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "rq_link",
+          "entity": "Telemetry"
+        }
+      },
+      {
+        "id": "opaque-dictionary",
+        "passed": true,
+        "decision": "coverage_end_date",
+        "expected": "coverage_end_date",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "coverage_end_date",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "Z92",
+          "entity": ""
+        }
+      },
+      {
+        "id": "misleading-birth",
+        "passed": true,
+        "decision": "job_start_time",
+        "expected": "job_start_time",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "job_start_time",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "birth_ts",
+          "entity": "JobExecution"
+        }
+      },
+      {
+        "id": "city-not-birthplace",
+        "passed": true,
+        "decision": "shipping_city",
+        "expected": "shipping_city",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "shipping_city",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "cust_city",
+          "entity": "Shipment"
+        }
+      },
+      {
+        "id": "lc-not-language",
+        "passed": true,
+        "decision": "course_identifier",
+        "expected": "course_identifier",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "course_identifier",
+          "status": "unresolved",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "lc",
+          "entity": "CourseRegistration"
+        }
+      },
+      {
+        "id": "french-date",
+        "passed": true,
+        "decision": "invoice_due_date",
+        "expected": "invoice_due_date",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "invoice_due_date",
+          "status": "hypothesis",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "local_model",
+          "name": "date_echeance",
+          "entity": ""
+        }
+      },
+      {
+        "id": "unexplained-code",
+        "passed": true,
+        "decision": "unresolved",
+        "expected": "unresolved",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "unresolved",
+          "status": "unresolved",
+          "citations": [
+            "E000001"
+          ],
+          "approved": false,
+          "origin": "consistency_guard",
+          "uncertainty_reason": "The model explicitly returned an uncertainty label.",
+          "name": "Q88",
+          "entity": ""
+        }
+      },
+      {
+        "id": "conflicting-party-key",
+        "passed": true,
+        "decision": "ambiguous",
+        "expected": "ambiguous",
+        "validated_annotation": {
+          "ref": "E000001",
+          "meaning": "ambiguous",
+          "status": "unresolved",
+          "citations": [
+            "E000001",
+            "E000002"
+          ],
+          "approved": false,
+          "origin": "consistency_guard",
+          "rejected_model_proposal": {
+            "meaning": "policy_identifier",
+            "status": "unresolved"
+          },
+          "competing_definition_refs": [
+            "E000001",
+            "E000002"
+          ],
+          "uncertainty_reason": "Distinct unreviewed definitions share this field scope; they may be compatible, but require review.",
+          "name": "P_ID",
+          "entity": ""
+        }
+      }
+    ],
+    "rubric": "Post-hoc normalization of case, whitespace, hyphens and underscores only; original strict scores retained. No synonyms or business ontology matching."
+  },
+  "frozen_probe_recheck": {
+    "passed": 10,
+    "total": 10,
+    "failures": [],
+    "note": "Maintainer-authored cases; previously inspected and rechecked, not independent domain-owner qualification"
+  },
+  "not_claimed": [
+    "A universal advantage over Copilot",
+    "Office-model business accuracy",
+    "Hidden reasoning-token savings",
+    "Production SLA or terabyte-scale validation",
+    "Fine-tuned or newly trained weights"
+  ]
+}

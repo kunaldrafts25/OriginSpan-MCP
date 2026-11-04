@@ -1,0 +1,289 @@
+{
+  "status": "COMPLETED",
+  "backend": "pgvector-hnsw",
+  "profile": {
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "chunking": "diamond-symbol-1",
+    "index": "diamond-1",
+    "artifact": "D:\\diamond-mcp\\.diamond\\models\\multilingual-e5-small"
+  },
+  "index_seconds": 93.24038599996129,
+  "tasks": [
+    {
+      "task": "demographic-birth",
+      "mode": "lexical",
+      "expected_file": "party_dictionary.md",
+      "hit_at_10": false,
+      "files": [
+        "agreement_dictionary.md",
+        "schema.sql",
+        "schema.sql"
+      ],
+      "seconds": 0.1503415000042878
+    },
+    {
+      "task": "demographic-birth",
+      "mode": "semantic",
+      "expected_file": "party_dictionary.md",
+      "hit_at_10": true,
+      "files": [
+        "party_dictionary.md",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "api.py",
+        "agreement_dictionary.md",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "schema.sql"
+      ],
+      "seconds": 0.35268239997094497
+    },
+    {
+      "task": "demographic-birth",
+      "mode": "hybrid",
+      "expected_file": "party_dictionary.md",
+      "hit_at_10": true,
+      "files": [
+        "schema.sql",
+        "agreement_dictionary.md",
+        "party_dictionary.md",
+        "api.py",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "api.py"
+      ],
+      "seconds": 0.2197545999661088
+    },
+    {
+      "task": "contract-expiration",
+      "mode": "lexical",
+      "expected_file": "agreement_dictionary.md",
+      "hit_at_10": true,
+      "files": [
+        "party_dictionary.md",
+        "agreement_dictionary.md",
+        "schema.sql",
+        "schema.sql",
+        "schema.sql",
+        "schema.sql"
+      ],
+      "seconds": 0.08082599996123463
+    },
+    {
+      "task": "contract-expiration",
+      "mode": "semantic",
+      "expected_file": "agreement_dictionary.md",
+      "hit_at_10": true,
+      "files": [
+        "agreement_dictionary.md",
+        "party_dictionary.md",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "schema.sql",
+        "schema.sql",
+        "schema.sql",
+        "api.py",
+        "schema.sql"
+      ],
+      "seconds": 0.17757240001810715
+    },
+    {
+      "task": "contract-expiration",
+      "mode": "hybrid",
+      "expected_file": "agreement_dictionary.md",
+      "hit_at_10": true,
+      "files": [
+        "agreement_dictionary.md",
+        "party_dictionary.md",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "api.py"
+      ],
+      "seconds": 0.177764100022614
+    },
+    {
+      "task": "ambiguous-identifier",
+      "mode": "lexical",
+      "expected_file": "schema.sql",
+      "hit_at_10": true,
+      "files": [
+        "schema.sql",
+        "schema.sql",
+        "agreement_dictionary.md",
+        "party_dictionary.md"
+      ],
+      "seconds": 0.06149529997492209
+    },
+    {
+      "task": "ambiguous-identifier",
+      "mode": "semantic",
+      "expected_file": "schema.sql",
+      "hit_at_10": true,
+      "files": [
+        "schema.sql",
+        "schema.sql",
+        "api.py",
+        "api.py",
+        "api.py",
+        "schema.sql",
+        "schema.sql",
+        "schema.sql",
+        "schema.sql",
+        "schema.sql"
+      ],
+      "seconds": 0.15707359998486936
+    },
+    {
+      "task": "ambiguous-identifier",
+      "mode": "hybrid",
+      "expected_file": "schema.sql",
+      "hit_at_10": true,
+      "files": [
+        "schema.sql",
+        "api.py",
+        "party_dictionary.md",
+        "agreement_dictionary.md",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "api.py",
+        "schema.sql",
+        "api.py"
+      ],
+      "seconds": 0.17337750003207475
+    }
+  ],
+  "sql_inventory": {
+    "queries": [
+      {
+        "id": "a405abd6c6f6c9949f8f46856304868843d6cbcd9405feb6195e84324158b1c0",
+        "file": "api.py",
+        "line": 2,
+        "language": "SQL",
+        "status": "parsed",
+        "metadata_sql": "SELECT p.B7 FROM party AS p WHERE p.C_ID = :id",
+        "tables": [
+          "party"
+        ],
+        "columns": [
+          "p.B7",
+          "p.C_ID"
+        ],
+        "schema_fields": [],
+        "value_lineage": [
+          {
+            "output": "B7",
+            "sources": [
+              "party.b7"
+            ],
+            "status": "AST_CONFIRMED",
+            "statement": 0,
+            "transformation": "p.b7 AS b7"
+          }
+        ],
+        "limitations": [
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved"
+        ]
+      },
+      {
+        "id": "b668f0ca7d2be99cd8c41cfb5ff555bdcf5d5e584648a94f5f3275fbad08ed2f",
+        "file": "schema.sql",
+        "line": 1,
+        "language": "SQL",
+        "status": "parsed",
+        "metadata_sql": null,
+        "tables": [
+          "agreement",
+          "party"
+        ],
+        "columns": [],
+        "schema_fields": [
+          {
+            "table": "party",
+            "name": "C_ID",
+            "data_type": "INT"
+          },
+          {
+            "table": "party",
+            "name": "B7",
+            "data_type": "DATE"
+          },
+          {
+            "table": "agreement",
+            "name": "C_ID",
+            "data_type": "INT"
+          },
+          {
+            "table": "agreement",
+            "name": "X17",
+            "data_type": "DATE"
+          }
+        ],
+        "value_lineage": [],
+        "limitations": [
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved"
+        ]
+      },
+      {
+        "id": "d09be65f8abd0ef9bdc56b9cace2c3af0714518a2149569e44c7e4463a66f265",
+        "file": "schema.sql",
+        "line": 1,
+        "language": "SQL",
+        "status": "parsed",
+        "metadata_sql": "CREATE TABLE party (C_ID INT PRIMARY KEY, B7 DATE);\nCREATE TABLE agreement (C_ID INT PRIMARY KEY, X17 DATE)",
+        "tables": [
+          "agreement",
+          "party"
+        ],
+        "columns": [],
+        "schema_fields": [
+          {
+            "table": "party",
+            "name": "C_ID",
+            "data_type": "INT"
+          },
+          {
+            "table": "party",
+            "name": "B7",
+            "data_type": "DATE"
+          },
+          {
+            "table": "agreement",
+            "name": "C_ID",
+            "data_type": "INT"
+          },
+          {
+            "table": "agreement",
+            "name": "X17",
+            "data_type": "DATE"
+          }
+        ],
+        "value_lineage": [],
+        "limitations": [
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved"
+        ]
+      }
+    ],
+    "next_offset": null,
+    "limitations": [
+      "Static query inventory; dynamic SQL remains unresolved",
+      "Embedded literal values are not returned as customer data"
+    ]
+  },
+  "limitations": [
+    "Synthetic held-out metadata fixture; not a universal benchmark",
+    "Host-AI answer correctness not evaluated"
+  ]
+}

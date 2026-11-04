@@ -1,0 +1,8 @@
+{
+  "status": "PASSED",
+  "schema": "https://render.com/schema/render.yaml.json",
+  "schema_sha256": "8a3fb8da6b4f55fe686fbefa790e011d3dd7895f013f355953c572a21ab6494a",
+  "checked_at": "2026-11-04T11:15:16.316786+00:00",
+  "errors": [],
+  "limitation": "Official JSON schema validation; live Render account/API validation is separate"
+}

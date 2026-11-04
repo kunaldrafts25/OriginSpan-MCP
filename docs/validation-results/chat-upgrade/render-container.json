@@ -1,0 +1,37 @@
+{
+  "image": "originspan-mcp:chat-0.5",
+  "memory_limit_bytes": 536870912,
+  "source_zip_bytes": 410764,
+  "checks": {
+    "readiness": true,
+    "unauthorized_denied": true,
+    "banking_analysis_completed": true,
+    "configured_service_dependencies": true,
+    "readable_markdown_and_diagram": true,
+    "interface_country_field": true,
+    "review_required_for_c360": true,
+    "field_usage_trails": true,
+    "explicit_jpql_resolution": true,
+    "cross_project_denied": true,
+    "self_approval_denied": true
+  },
+  "limitations": [
+    "Local Linux container, not the live Render deployment",
+    "No host-AI answer comparison; no large-project or terabyte capacity claim"
+  ],
+  "tool_count": 25,
+  "analysis_seconds": 26.223082999989856,
+  "snapshot": {
+    "files": 321,
+    "inventoried_files": 321,
+    "bytes": 920371,
+    "consistency": "per-file content snapshot; filesystem traversal is not a transactional VCS checkout"
+  },
+  "evidence_count": 4076,
+  "dossier_seconds": 0.2761807999922894,
+  "dossier_bytes": 39094,
+  "chat_text_bytes": 15315,
+  "resolved_jpql_queries": 8,
+  "oom_killed": false,
+  "status": "PASS"
+}

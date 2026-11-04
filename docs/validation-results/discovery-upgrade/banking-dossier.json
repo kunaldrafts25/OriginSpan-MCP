@@ -1,0 +1,2030 @@
+{
+  "summary": "Evidence dossier for host-AI discovery; interpretations and C360 mappings remain reviewable",
+  "application_id": "13e048ca30164ef99b33548764dae60e",
+  "analysis_id": "9915df3291f04e8186ef309d559bc543",
+  "analysis_status": "COMPLETED",
+  "extraction_version": "originspan-production-5",
+  "snapshot": {
+    "files": 340,
+    "inventoried_files": 448,
+    "bytes": 929085,
+    "consistency": "per-file content snapshot; filesystem traversal is not a transactional VCS checkout"
+  },
+  "evidence_count": 3955,
+  "neural": {
+    "available": false,
+    "profile": null,
+    "runtime_ready": true,
+    "runtime_status": "READY",
+    "backend": "streaming-local-exact"
+  },
+  "architecture": {
+    "summary": "Evidence-backed architecture aggregation",
+    "level": "services",
+    "nodes": [
+      {
+        "id": ".github",
+        "name": ".github",
+        "kind": "service",
+        "counts": {
+          "CONFIGURED_ENDPOINT": 6
+        },
+        "evidence": [
+          {
+            "file": ".github/auto-approve.yml",
+            "line": 15,
+            "kind": "CONFIGURED_ENDPOINT",
+            "status": "CANDIDATE"
+          }
+        ]
+      },
+      {
+        "id": ".github/workflows/ui-tests",
+        "name": ".github/workflows/ui-tests",
+        "kind": "service",
+        "counts": {
+          "SERVICE_MANIFEST": 1,
+          "CONFIGURED_ENDPOINT": 3
+        },
+        "evidence": [
+          {
+            "file": ".github/workflows/ui-tests/Dockerfile",
+            "line": 1,
+            "kind": "SERVICE_MANIFEST",
+            "status": "DECLARED_MANIFEST"
+          }
+        ]
+      },
+      {
+        "id": "application",
+        "name": "application",
+        "kind": "service",
+        "counts": {
+          "SERVICE_MANIFEST": 1,
+          "CONFIGURED_ENDPOINT": 1
+        },
+        "evidence": [
+          {
+            "file": "pom.xml",
+            "line": 1,
+            "kind": "SERVICE_MANIFEST",
+            "status": "DECLARED_MANIFEST"
+          }
+        ]
+      },
+      {
+        "id": "extras",
+        "name": "extras",
+        "kind": "service",
+        "counts": {
+          "KUBERNETES_SERVICE": 23,
+          "KUBERNETES_INGRESS": 4,
+          "KUBERNETES_DEPLOYMENT": 16,
+          "CONFIGURED_ENDPOINT": 3,
+          "PACKAGE": 6,
+          "KUBERNETES_STATEFULSET": 2
+        },
+        "evidence": [
+          {
+            "file": "extras/tls-domain-managedcerts/managed-certificates.yaml",
+            "line": 1,
+            "kind": "KUBERNETES_SERVICE",
+            "status": "DECLARED_CONFIG"
+          }
+        ]
+      },
+      {
+        "id": "kubernetes-manifests",
+        "name": "kubernetes-manifests",
+        "kind": "service",
+        "counts": {
+          "KUBERNETES_SERVICE": 8,
+          "KUBERNETES_STATEFULSET": 2,
+          "KUBERNETES_DEPLOYMENT": 7
+        },
+        "evidence": [
+          {
+            "file": "kubernetes-manifests/ledger-db.yaml",
+            "line": 1,
+            "kind": "KUBERNETES_SERVICE",
+            "status": "DECLARED_CONFIG"
+          }
+        ]
+      },
+      {
+        "id": "src",
+        "name": "src",
+        "kind": "service",
+        "counts": {
+          "KUBERNETES_DEPLOYMENT": 1,
+          "CONFIGURED_ENDPOINT": 1,
+          "KUBERNETES_SERVICE": 1
+        },
+        "evidence": [
+          {
+            "file": "src/components/cloud-sql-fwi/add-fwi.yaml",
+            "line": 1,
+            "kind": "KUBERNETES_DEPLOYMENT",
+            "status": "DECLARED_CONFIG"
+          }
+        ]
+      },
+      {
+        "id": "src/accounts/accounts-db",
+        "name": "src/accounts/accounts-db",
+        "kind": "service",
+        "counts": {
+          "TABLE": 4,
+          "CONFIGURED_ENDPOINT": 1,
+          "KUBERNETES_STATEFULSET": 1,
+          "KUBERNETES_SERVICE": 1,
+          "SERVICE_MANIFEST": 1
+        },
+        "evidence": [
+          {
+            "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+            "line": 1,
+            "kind": "TABLE",
+            "status": "STATIC_EVIDENCE"
+          }
+        ]
+      },
+      {
+        "id": "src/accounts/contacts",
+        "name": "src/accounts/contacts",
+        "kind": "service",
+        "counts": {
+          "PACKAGE": 35,
+          "KUBERNETES_DEPLOYMENT": 1,
+          "KUBERNETES_SERVICE": 1,
+          "SERVICE_MANIFEST": 2,
+          "API_ENDPOINT": 4
+        },
+        "evidence": [
+          {
+            "file": "src/accounts/contacts/tests/constants.py",
+            "line": 18,
+            "kind": "PACKAGE",
+            "status": "STATIC_EVIDENCE"
+          }
+        ]
+      },
+      {
+        "id": "src/accounts/userservice",
+        "name": "src/accounts/userservice",
+        "kind": "service",
+        "counts": {
+          "KUBERNETES_DEPLOYMENT": 1,
+          "KUBERNETES_SERVICE": 1,
+          "PACKAGE": 39,
+          "API_ENDPOINT": 4,
+          "SERVICE_MANIFEST": 2
+        },
+        "evidence": [
+          {
+            "file": "src/accounts/userservice/k8s/base/userservice.yaml",
+            "line": 1,
+            "kind": "KUBERNETES_DEPLOYMENT",
+            "status": "DECLARED_CONFIG"
+          }
+        ]
+      },
+      {
+        "id": "src/frontend",
+        "name": "src/frontend",
+        "kind": "service",
+        "counts": {
+          "KUBERNETES_DEPLOYMENT": 1,
+          "KUBERNETES_SERVICE": 2,
+          "SERVICE_MANIFEST": 2,
+          "PACKAGE": 27,
+          "API_ENDPOINT": 14,
+          "KUBERNETES_INGRESS": 2,
+          "CONFIGURED_ENDPOINT": 1
+        },
+        "evidence": [
+          {
+            "file": "src/frontend/k8s/base/frontend.yaml",
+            "line": 1,
+            "kind": "KUBERNETES_DEPLOYMENT",
+            "status": "DECLARED_CONFIG"
+          }
+        ]
+      },
+      {
+        "id": "src/ledger/balancereader",
+        "name": "src/ledger/balancereader",
+        "kind": "service",
+        "counts": {
+          "SERVICE_MANIFEST": 1,
+          "CONFIGURED_ENDPOINT": 25,
+          "PACKAGE": 105,
+          "TABLE": 1,
+          "KUBERNETES_DEPLOYMENT": 1,
+          "KUBERNETES_SERVICE": 1,
+          "API_ENDPOINT": 4
+        },
+        "evidence": [
+          {
+            "file": "src/ledger/balancereader/pom.xml",
+            "line": 1,
+            "kind": "SERVICE_MANIFEST",
+            "status": "DECLARED_MANIFEST"
+          }
+        ]
+      },
+      {
+        "id": "src/ledger/ledger-db",
+        "name": "src/ledger/ledger-db",
+        "kind": "service",
+        "counts": {
+          "TABLE": 1,
+          "CONFIGURED_ENDPOINT": 1,
+          "SERVICE_MANIFEST": 1,
+          "KUBERNETES_STATEFULSET": 1,
+          "KUBERNETES_SERVICE": 1
+        },
+        "evidence": [
+          {
+            "file": "src/ledger/ledger-db/initdb/0_init_tables.sql",
+            "line": 1,
+            "kind": "TABLE",
+            "status": "STATIC_EVIDENCE"
+          }
+        ]
+      },
+      {
+        "id": "src/ledger/ledgerwriter",
+        "name": "src/ledger/ledgerwriter",
+        "kind": "service",
+        "counts": {
+          "PACKAGE": 120,
+          "CONFIGURED_ENDPOINT": 25,
+          "API_ENDPOINT": 3,
+          "KUBERNETES_DEPLOYMENT": 1,
+          "KUBERNETES_SERVICE": 1,
+          "SERVICE_MANIFEST": 1
+        },
+        "evidence": [
+          {
+            "file": "src/ledger/ledgerwriter/src/main/java/anthos/samples/bankofanthos/ledgerwriter/JWTVerifierGenerator.java",
+            "line": 19,
+            "kind": "PACKAGE",
+            "status": "STATIC_EVIDENCE"
+          }
+        ]
+      },
+      {
+        "id": "src/ledger/transactionhistory",
+        "name": "src/ledger/transactionhistory",
+        "kind": "service",
+        "counts": {
+          "KUBERNETES_DEPLOYMENT": 1,
+          "KUBERNETES_SERVICE": 1,
+          "PACKAGE": 110,
+          "API_ENDPOINT": 4,
+          "CONFIGURED_ENDPOINT": 25,
+          "SERVICE_MANIFEST": 1
+        },
+        "evidence": [
+          {
+            "file": "src/ledger/transactionhistory/k8s/base/transactionhistory.yaml",
+            "line": 1,
+            "kind": "KUBERNETES_DEPLOYMENT",
+            "status": "DECLARED_CONFIG"
+          }
+        ]
+      },
+      {
+        "id": "src/ledgermonolith",
+        "name": "src/ledgermonolith",
+        "kind": "service",
+        "counts": {
+          "CONFIGURED_ENDPOINT": 26,
+          "SERVICE_MANIFEST": 1,
+          "PACKAGE": 103,
+          "API_ENDPOINT": 6,
+          "TABLE": 1
+        },
+        "evidence": [
+          {
+            "file": "src/ledgermonolith/config.yaml",
+            "line": 30,
+            "kind": "CONFIGURED_ENDPOINT",
+            "status": "CANDIDATE"
+          }
+        ]
+      },
+      {
+        "id": "src/loadgenerator",
+        "name": "src/loadgenerator",
+        "kind": "service",
+        "counts": {
+          "KUBERNETES_DEPLOYMENT": 1,
+          "PACKAGE": 5,
+          "SERVICE_MANIFEST": 2
+        },
+        "evidence": [
+          {
+            "file": "src/loadgenerator/k8s/base/loadgenerator.yaml",
+            "line": 1,
+            "kind": "KUBERNETES_DEPLOYMENT",
+            "status": "DECLARED_CONFIG"
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "source": "src/accounts/accounts-db",
+        "target": "database:contacts",
+        "kind": "references",
+        "status": "STATIC_EVIDENCE",
+        "evidence": {
+          "file": "src/accounts/accounts-db/initdb/1-load-testdata.sql",
+          "line": 1
+        }
+      },
+      {
+        "source": "src/accounts/accounts-db",
+        "target": "database:users",
+        "kind": "references",
+        "status": "STATIC_EVIDENCE",
+        "evidence": {
+          "file": "src/accounts/accounts-db/initdb/1-load-testdata.sql",
+          "line": 1
+        }
+      },
+      {
+        "source": "src/ledger/balancereader",
+        "target": "database:TRANSACTIONS",
+        "kind": "references",
+        "status": "STATIC_EVIDENCE",
+        "evidence": {
+          "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/TransactionRepository.java",
+          "line": 30
+        }
+      },
+      {
+        "source": "src/ledger/ledger-db",
+        "target": "database:TRANSACTIONS",
+        "kind": "references",
+        "status": "STATIC_EVIDENCE",
+        "evidence": {
+          "file": "src/ledger/ledger-db/initdb/0_init_tables.sql",
+          "line": 1
+        }
+      },
+      {
+        "source": "src/ledgermonolith",
+        "target": "database:TRANSACTIONS",
+        "kind": "references",
+        "status": "STATIC_EVIDENCE",
+        "evidence": {
+          "file": "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionRepository.java",
+          "line": 32
+        }
+      },
+      {
+        "source": "src/frontend",
+        "target": "src/accounts/userservice",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "USERSERVICE_API_ADDR",
+        "evidence": {
+          "file": "src/frontend/frontend.py",
+          "line": 665
+        },
+        "supporting_evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 665
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 32
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      },
+      {
+        "source": "src/frontend",
+        "target": "src/ledger/transactionhistory",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "HISTORY_API_ADDR",
+        "evidence": {
+          "file": "src/frontend/frontend.py",
+          "line": 669
+        },
+        "supporting_evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 669
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 30
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      },
+      {
+        "source": "src/frontend",
+        "target": "src/accounts/contacts",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "CONTACTS_API_ADDR",
+        "evidence": {
+          "file": "src/frontend/frontend.py",
+          "line": 673
+        },
+        "supporting_evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 673
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 31
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      },
+      {
+        "source": "src/frontend",
+        "target": "src/ledger/balancereader",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "BALANCES_API_ADDR",
+        "evidence": {
+          "file": "src/frontend/frontend.py",
+          "line": 667
+        },
+        "supporting_evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 667
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 29
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      },
+      {
+        "source": "src/frontend",
+        "target": "src/ledger/ledgerwriter",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "TRANSACTIONS_API_ADDR",
+        "evidence": {
+          "file": "src/frontend/frontend.py",
+          "line": 663
+        },
+        "supporting_evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 663
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 28
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      }
+    ],
+    "mermaid": "flowchart LR\n  s0[\"balancereader\"]\n  s1[\"contacts\"]\n  s2[\"frontend\"]\n  s3[\"ledgerwriter\"]\n  s4[\"transactionhistory\"]\n  s5[\"userservice\"]\n  s2 --> s5\n  s2 --> s4\n  s2 --> s1\n  s2 --> s0\n  s2 --> s3",
+    "total": 16,
+    "next_offset": null,
+    "limitations": [
+      "Runtime routes, service meshes and dynamic endpoints need additional approved evidence",
+      "Candidate/configuration edges are not runtime observations",
+      "Overview caps 10000 manifests and 500 visible edges; paginate/drill down"
+    ],
+    "resolved_service_dependencies": [
+      {
+        "source": "frontend",
+        "target": "userservice",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "USERSERVICE_API_ADDR",
+        "evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 665
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 32
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      },
+      {
+        "source": "frontend",
+        "target": "transactionhistory",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "HISTORY_API_ADDR",
+        "evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 669
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 30
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      },
+      {
+        "source": "frontend",
+        "target": "contacts",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "CONTACTS_API_ADDR",
+        "evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 673
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 31
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      },
+      {
+        "source": "frontend",
+        "target": "balancereader",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "BALANCES_API_ADDR",
+        "evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 667
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 29
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      },
+      {
+        "source": "frontend",
+        "target": "ledgerwriter",
+        "kind": "configured_service_call",
+        "status": "STATIC_CONFIG_BINDING",
+        "variable": "TRANSACTIONS_API_ADDR",
+        "evidence": [
+          {
+            "file": "src/frontend/frontend.py",
+            "line": 663
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/config.yaml",
+            "line": 28
+          },
+          {
+            "file": "extras/cloudsql/kubernetes-manifests/frontend.yaml",
+            "line": 84
+          }
+        ]
+      }
+    ],
+    "omitted_edges": 35,
+    "expand_tool": "get_architecture"
+  },
+  "sections": {
+    "purpose": {
+      "section": "purpose",
+      "items": [
+        {
+          "id": "ev-52372580c9cc00a590593cd9",
+          "title": "| [balance-reader](/src/ledger/balancereader)            | Java          | Provides efficient readable cache of user balances, as read from `ledger-db`.                                                ",
+          "evidence": {
+            "file": "README.md",
+            "line": 31
+          },
+          "definition": "| [balance-reader](/src/ledger/balancereader)            | Java          | Provides efficient readable cache of user balances, as read from `ledger-db`.                                                                |\n| [transaction-history](/src/ledger/transactionhistory)  | Java          | Provides efficient readable cache of past transactions, as read from `ledger-db`.                                                            |\n| [ledger-db](/src/ledger/ledger-db)                     | PostgreSQL    | Ledger of all transactions. Option to pre-populate with transactions for demo users.                                                         |\n| [user-service](/src/accounts/userservice)              | Python        | Manages user accounts and authentication. Signs JWTs used for authentication by other services.                                              |\n| [contacts](/src/accounts/c",
+          "status": "DOCUMENTED_CLAIM_NOT_RUNTIME_PROOF"
+        },
+        {
+          "id": "ev-8e4afc081076466578a86d24",
+          "title": "Deleting the cluster may take a few minutes.",
+          "evidence": {
+            "file": "README.md",
+            "line": 121
+          },
+          "definition": "\n   Deleting the cluster may take a few minutes.\n\n## Additional deployment options\n\n- **Workload Identity**: [See these instructions.](/docs/workload-identity.md)\n- **Cloud SQL**: [See these instructions](/extras/cloudsql) to replace the in-cluster databases with hosted Google Cloud SQL.\n- **Multi Cluster with Cloud SQL**: [See these instructions](/extras/cloudsql-multicluster) to replicate the app across two regions using GKE, Multi Cluster Ingress, and Google Cloud SQL.\n- **Istio**: [See these instructions](/extras/istio) to configure an IngressGateway.\n- **Anthos Service Mesh**: ASM requires Workload Identity to be enabled in your GKE cluster. [See the workload identity instructions](/docs/workload-identity.md) to configure and deploy the app. Then, apply `extras/istio/` to your cluster to configure frontend ingress.\n- **Java Monolith (VM)**: We provide a version of this app where the",
+          "status": "DOCUMENTED_CLAIM_NOT_RUNTIME_PROOF"
+        },
+        {
+          "id": "ev-c34bc09b4e162a976ed8827c",
+          "title": "After a few minutes, you should see the Pods in a `Running` state:",
+          "evidence": {
+            "file": "README.md",
+            "line": 91
+          },
+          "definition": "\n   After a few minutes, you should see the Pods in a `Running` state:\n\n   ```\n   NAME                                  READY   STATUS    RESTARTS   AGE\n   accounts-db-6f589464bc-6r7b7          1/1     Running   0          99s\n   balancereader-797bf6d7c5-8xvp6        1/1     Running   0          99s\n   contacts-769c4fb556-25pg2             1/1     Running   0          98s\n   frontend-7c96b54f6b-zkdbz             1/1     Running   0          98s\n   ledger-db-5b78474d4f-p6xcb            1/1     Running   0          98s\n   ledgerwriter-84bf44b95d-65mqf         1/1     Running   0          97s\n   loadgenerator-559667b6ff-4zsvb        1/1     Running   0          97s\n   transactionhistory-5569754896-z94cn   1/1     Running   0          97s\n   userservice-78dc876bff-pdhtl          1/1     Running   0          96s\n   ```\n\n7. Access the web frontend in a browser using the frontend's external IP.",
+          "status": "DOCUMENTED_CLAIM_NOT_RUNTIME_PROOF"
+        }
+      ],
+      "total": 137,
+      "next_offset": 3,
+      "fact_scan": {
+        "total": 628,
+        "scanned": 628,
+        "truncated": false
+      },
+      "limitations": [
+        "Static source facts and candidate associations; no records or source excerpts returned"
+      ]
+    },
+    "apis": {
+      "section": "apis",
+      "items": [
+        {
+          "id": "ev-71cbbe21ad8e9d26fc893e34",
+          "name": "GET /contacts/<username>",
+          "evidence": {
+            "file": "src/accounts/contacts/contacts.py",
+            "line": 65
+          },
+          "kind": "api_endpoint"
+        },
+        {
+          "id": "ev-aac9609147db5e463a8493c4",
+          "name": "GET /ready",
+          "evidence": {
+            "file": "src/accounts/contacts/contacts.py",
+            "line": 60
+          },
+          "kind": "api_endpoint"
+        },
+        {
+          "id": "ev-bfd050c936fb6b5a75306f34",
+          "name": "GET /version",
+          "evidence": {
+            "file": "src/accounts/contacts/contacts.py",
+            "line": 53
+          },
+          "kind": "api_endpoint"
+        },
+        {
+          "id": "ev-d0ac32e0556b3c2cc5c8c8cd",
+          "name": "POST /contacts/<username>",
+          "evidence": {
+            "file": "src/accounts/contacts/contacts.py",
+            "line": 94
+          },
+          "kind": "api_endpoint"
+        },
+        {
+          "id": "ev-093bce7df591a0b5b23a9268",
+          "name": "GET /ready",
+          "evidence": {
+            "file": "src/accounts/userservice/userservice.py",
+            "line": 60
+          },
+          "kind": "api_endpoint"
+        },
+        {
+          "id": "ev-2d86d62ad0c1cb98d8eca1fc",
+          "name": "GET /version",
+          "evidence": {
+            "file": "src/accounts/userservice/userservice.py",
+            "line": 53
+          },
+          "kind": "api_endpoint"
+        },
+        {
+          "id": "ev-9a7b2c7660be525ea2b3058a",
+          "name": "GET /login",
+          "evidence": {
+            "file": "src/accounts/userservice/userservice.py",
+            "line": 163
+          },
+          "kind": "api_endpoint"
+        },
+        {
+          "id": "ev-e334f1910d0b7611759e4fcb",
+          "name": "POST /users",
+          "evidence": {
+            "file": "src/accounts/userservice/userservice.py",
+            "line": 67
+          },
+          "kind": "api_endpoint"
+        }
+      ],
+      "total": 39,
+      "next_offset": 8,
+      "fact_scan": {
+        "total": 628,
+        "scanned": 628,
+        "truncated": false
+      },
+      "limitations": [
+        "Static source facts and candidate associations; no records or source excerpts returned"
+      ]
+    },
+    "fields": {
+      "section": "fields",
+      "items": [
+        {
+          "id": "ev-f0843dd0948b52312d64e1c8",
+          "name": "account_num",
+          "entity": "contacts",
+          "kind": "declared_schema_field",
+          "data_type": "CHAR(10)",
+          "evidence": {
+            "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+            "line": 39
+          },
+          "description": "Table contacts; data type CHAR(10)",
+          "interpretation": "UNRESOLVED_UNLESS_SUPPORTED_BY_DEFINITIONS",
+          "usage_count": 13,
+          "usage_candidates": [
+            {
+              "file": "src/accounts/contacts/contacts.py",
+              "line": 160,
+              "function": "_validate_new_contact",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/contacts.py",
+              "line": 177,
+              "function": "_check_contact_allowed",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/contacts.py",
+              "line": 182,
+              "function": "_check_contact_allowed",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/contacts.py",
+              "line": 128,
+              "function": "add_contact",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/db.py",
+              "line": 79,
+              "function": "get_contacts",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/tests/constants.py",
+              "line": 59,
+              "function": null,
+              "role": "dictionary_key"
+            }
+          ],
+          "usage_binding": "Same identifier is a candidate association, not proved entity binding"
+        },
+        {
+          "id": "ev-28887c2ebbfe7ce3c2492d54",
+          "name": "accountid",
+          "entity": "users",
+          "kind": "declared_schema_field",
+          "data_type": "CHAR(10)",
+          "evidence": {
+            "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+            "line": 18
+          },
+          "description": "Table users; data type CHAR(10)",
+          "interpretation": "UNRESOLVED_UNLESS_SUPPORTED_BY_DEFINITIONS",
+          "usage_count": 8,
+          "usage_candidates": [
+            {
+              "file": "src/accounts/userservice/db.py",
+              "line": 76,
+              "function": "generate_accountid",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/userservice/tests/constants.py",
+              "line": 52,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/userservice/tests/test_db.py",
+              "line": 54,
+              "function": "test_add_same_user_raises_exception",
+              "role": "write"
+            },
+            {
+              "file": "src/accounts/userservice/tests/test_db.py",
+              "line": 85,
+              "function": "test_generate_account_id_ignores_existing_id_generates_new_id",
+              "role": "write"
+            },
+            {
+              "file": "src/accounts/userservice/tests/test_db.py",
+              "line": 65,
+              "function": "test_get_user_returns_existing_user",
+              "role": "write"
+            },
+            {
+              "file": "src/accounts/userservice/tests/test_db.py",
+              "line": 45,
+              "function": "test_add_user_returns_none_no_exception",
+              "role": "write"
+            }
+          ],
+          "usage_binding": "Same identifier is a candidate association, not proved entity binding"
+        },
+        {
+          "id": "ev-edf2a5521c131c934c7d4a6e",
+          "name": "address",
+          "entity": "users",
+          "kind": "declared_schema_field",
+          "data_type": "VARCHAR(64)",
+          "evidence": {
+            "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+            "line": 25
+          },
+          "description": "Table users; data type VARCHAR(64)",
+          "interpretation": "UNRESOLVED_UNLESS_SUPPORTED_BY_DEFINITIONS",
+          "usage_count": 4,
+          "usage_candidates": [
+            {
+              "file": "src/accounts/userservice/tests/constants.py",
+              "line": 59,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/userservice/tests/constants.py",
+              "line": 46,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/userservice/userservice.py",
+              "line": 112,
+              "function": "create_user",
+              "role": "read"
+            },
+            {
+              "file": "src/loadgenerator/locustfile.py",
+              "line": 44,
+              "function": "signup_helper",
+              "role": "dictionary_key"
+            }
+          ],
+          "usage_binding": "Same identifier is a candidate association, not proved entity binding"
+        },
+        {
+          "id": "ev-f6ed7b8b204bf903ae11c9be",
+          "name": "birthday",
+          "entity": "users",
+          "kind": "declared_schema_field",
+          "data_type": "DATE",
+          "evidence": {
+            "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+            "line": 23
+          },
+          "description": "Table users; data type DATE",
+          "interpretation": "UNRESOLVED_UNLESS_SUPPORTED_BY_DEFINITIONS",
+          "usage_count": 5,
+          "usage_candidates": [
+            {
+              "file": "src/accounts/userservice/tests/constants.py",
+              "line": 57,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/userservice/tests/constants.py",
+              "line": 44,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/userservice/tests/test_userservice.py",
+              "line": 109,
+              "function": "test_create_user_201_status_code_correct_db_user_object",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/userservice/userservice.py",
+              "line": 110,
+              "function": "create_user",
+              "role": "read"
+            },
+            {
+              "file": "src/loadgenerator/locustfile.py",
+              "line": 42,
+              "function": "signup_helper",
+              "role": "dictionary_key"
+            }
+          ],
+          "usage_binding": "Same identifier is a candidate association, not proved entity binding"
+        },
+        {
+          "id": "ev-bc769053e3ee60157dbf10b7",
+          "name": "firstname",
+          "entity": "users",
+          "kind": "declared_schema_field",
+          "data_type": "VARCHAR(64)",
+          "evidence": {
+            "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+            "line": 21
+          },
+          "description": "Table users; data type VARCHAR(64)",
+          "interpretation": "UNRESOLVED_UNLESS_SUPPORTED_BY_DEFINITIONS",
+          "usage_count": 6,
+          "usage_candidates": [
+            {
+              "file": "src/accounts/userservice/tests/constants.py",
+              "line": 42,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/userservice/tests/constants.py",
+              "line": 55,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/userservice/tests/test_userservice.py",
+              "line": 216,
+              "function": "test_login_200_status_code_jwt_decoding_payload_passes",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/userservice/userservice.py",
+              "line": 108,
+              "function": "create_user",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/userservice/userservice.py",
+              "line": 190,
+              "function": "login",
+              "role": "read"
+            },
+            {
+              "file": "src/loadgenerator/locustfile.py",
+              "line": 40,
+              "function": "signup_helper",
+              "role": "dictionary_key"
+            }
+          ],
+          "usage_binding": "Same identifier is a candidate association, not proved entity binding"
+        },
+        {
+          "id": "ev-6dba56ac2d2ebb695e62460e",
+          "name": "is_external",
+          "entity": "contacts",
+          "kind": "declared_schema_field",
+          "data_type": "BOOLEAN",
+          "evidence": {
+            "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+            "line": 41
+          },
+          "description": "Table contacts; data type BOOLEAN",
+          "interpretation": "UNRESOLVED_UNLESS_SUPPORTED_BY_DEFINITIONS",
+          "usage_count": 7,
+          "usage_candidates": [
+            {
+              "file": "src/accounts/contacts/contacts.py",
+              "line": 130,
+              "function": "add_contact",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/contacts.py",
+              "line": 166,
+              "function": "_validate_new_contact",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/db.py",
+              "line": 81,
+              "function": "get_contacts",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/tests/constants.py",
+              "line": 54,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/contacts/tests/constants.py",
+              "line": 61,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/contacts/tests/test_contacts.py",
+              "line": 220,
+              "function": "test_create_contact_400_status_code_is_external_routing_num_equals_local_routing",
+              "role": "write"
+            }
+          ],
+          "usage_binding": "Same identifier is a candidate association, not proved entity binding"
+        },
+        {
+          "id": "ev-2fc40ba2b607dad2ca057107",
+          "name": "label",
+          "entity": "contacts",
+          "kind": "declared_schema_field",
+          "data_type": "VARCHAR(128)",
+          "evidence": {
+            "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+            "line": 38
+          },
+          "description": "Table contacts; data type VARCHAR(128)",
+          "interpretation": "UNRESOLVED_UNLESS_SUPPORTED_BY_DEFINITIONS",
+          "usage_count": 8,
+          "usage_candidates": [
+            {
+              "file": "src/accounts/contacts/contacts.py",
+              "line": 127,
+              "function": "add_contact",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/contacts.py",
+              "line": 170,
+              "function": "_validate_new_contact",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/contacts.py",
+              "line": 186,
+              "function": "_check_contact_allowed",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/db.py",
+              "line": 78,
+              "function": "get_contacts",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/contacts/tests/constants.py",
+              "line": 58,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/contacts/tests/constants.py",
+              "line": 51,
+              "function": null,
+              "role": "dictionary_key"
+            }
+          ],
+          "usage_binding": "Same identifier is a candidate association, not proved entity binding"
+        },
+        {
+          "id": "ev-d29474d4dc02f20ff1700fc3",
+          "name": "lastname",
+          "entity": "users",
+          "kind": "declared_schema_field",
+          "data_type": "VARCHAR(64)",
+          "evidence": {
+            "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+            "line": 22
+          },
+          "description": "Table users; data type VARCHAR(64)",
+          "interpretation": "UNRESOLVED_UNLESS_SUPPORTED_BY_DEFINITIONS",
+          "usage_count": 6,
+          "usage_candidates": [
+            {
+              "file": "src/accounts/userservice/tests/constants.py",
+              "line": 56,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/userservice/tests/constants.py",
+              "line": 43,
+              "function": null,
+              "role": "dictionary_key"
+            },
+            {
+              "file": "src/accounts/userservice/tests/test_userservice.py",
+              "line": 216,
+              "function": "test_login_200_status_code_jwt_decoding_payload_passes",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/userservice/userservice.py",
+              "line": 109,
+              "function": "create_user",
+              "role": "read"
+            },
+            {
+              "file": "src/accounts/userservice/userservice.py",
+              "line": 190,
+              "function": "login",
+              "role": "read"
+            },
+            {
+              "file": "src/loadgenerator/locustfile.py",
+              "line": 41,
+              "function": "signup_helper",
+              "role": "dictionary_key"
+            }
+          ],
+          "usage_binding": "Same identifier is a candidate association, not proved entity binding"
+        }
+      ],
+      "total": 67,
+      "next_offset": 8,
+      "fact_scan": {
+        "total": 628,
+        "scanned": 628,
+        "truncated": false
+      },
+      "limitations": [
+        "Static source facts and candidate associations; no records or source excerpts returned"
+      ]
+    },
+    "orm": {
+      "section": "orm",
+      "items": [
+        {
+          "kind": "orm_operation",
+          "name": "update",
+          "file": "extras/postgres-hpa/helm-postgres-ha/pgpool-operator/pgpool.py",
+          "line": 61,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "binding": "kopf.on",
+          "framework": "sqlalchemy_candidate",
+          "predicates": [],
+          "function": "reconcile_backend_nodes",
+          "id": "c1e59f407085a315d070ff4dfcbbef1a30a9492fa3893d9a4309b996ed8a9b5f"
+        },
+        {
+          "kind": "orm_column",
+          "name": "routing_num",
+          "file": "src/accounts/contacts/db.py",
+          "line": 39,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "table": "contacts",
+          "binding": "self.contacts_table",
+          "data_type": "String",
+          "framework": "sqlalchemy",
+          "id": "4ce3d2fee0a4aa5c802124a6ad10b5816bb9c15090d27db5bdb848f3f00ff873"
+        },
+        {
+          "kind": "orm_operation",
+          "name": "insert",
+          "file": "src/accounts/contacts/db.py",
+          "line": 56,
+          "status": "EXPLICIT_TABLE_BINDING",
+          "extractor": "originspan-discovery-1",
+          "binding": "self.contacts_table",
+          "framework": "sqlalchemy",
+          "predicates": [],
+          "function": "add_contact",
+          "table": "contacts",
+          "id": "6a4d57470f2a1e9ac3b053f94e07632e85e49a71e997d809227d04f03c78b501"
+        },
+        {
+          "kind": "orm_column",
+          "name": "label",
+          "file": "src/accounts/contacts/db.py",
+          "line": 37,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "table": "contacts",
+          "binding": "self.contacts_table",
+          "data_type": "String",
+          "framework": "sqlalchemy",
+          "id": "7f904a665ee978132b6dc3e1f4fb40c8e72bcc6704342d313b124d46edc87000"
+        },
+        {
+          "kind": "orm_column",
+          "name": "account_num",
+          "file": "src/accounts/contacts/db.py",
+          "line": 38,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "table": "contacts",
+          "binding": "self.contacts_table",
+          "data_type": "String",
+          "framework": "sqlalchemy",
+          "id": "8c843287ec819fea5354cdd479d50d4ccaef1744ff15d90565bc13550d764ac7"
+        },
+        {
+          "kind": "orm_column",
+          "name": "username",
+          "file": "src/accounts/contacts/db.py",
+          "line": 36,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "table": "contacts",
+          "binding": "self.contacts_table",
+          "data_type": "String",
+          "framework": "sqlalchemy",
+          "id": "a10536ed5b2ff993c976d5559222810ec46556e6698caeb25624b1c1df6ff3bb"
+        },
+        {
+          "kind": "orm_operation",
+          "name": "select",
+          "file": "src/accounts/contacts/db.py",
+          "line": 70,
+          "status": "EXPLICIT_TABLE_BINDING",
+          "extractor": "originspan-discovery-1",
+          "binding": "self.contacts_table",
+          "framework": "sqlalchemy",
+          "predicates": [
+            "self.contacts_table.c.username = username"
+          ],
+          "function": "get_contacts",
+          "table": "contacts",
+          "id": "bfcbde347e28b2fb2dee4eda63f2b11a8609167f86b4907574330db1aafed778"
+        },
+        {
+          "kind": "orm_table",
+          "name": "self.contacts_table",
+          "file": "src/accounts/contacts/db.py",
+          "line": 33,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "table": "contacts",
+          "framework": "sqlalchemy",
+          "id": "ecc126b87c63e21fdca0d893a5f2e09b03a0f96eca8c97110fd1e221d1f0ac71"
+        }
+      ],
+      "total": 60,
+      "next_offset": 8,
+      "fact_scan": {
+        "total": 628,
+        "scanned": 628,
+        "truncated": false
+      },
+      "limitations": [
+        "Static source facts and candidate associations; no records or source excerpts returned"
+      ]
+    },
+    "transformations": {
+      "section": "transformations",
+      "items": [
+        {
+          "kind": "transformation",
+          "name": "numeric_scaling",
+          "file": "extras/postgres-hpa/helm-postgres-ha/pgpool-operator/pgpool.py",
+          "line": 37,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "operation": "Mult",
+          "factor": 10,
+          "inputs": [
+            "?",
+            "?"
+          ],
+          "function": "configure",
+          "meaning": "Scaling observed; units require surrounding evidence",
+          "id": "4de70f2ce88e4b3e53182521fd69e186063906b76db0a52917429c419e006e9c"
+        },
+        {
+          "kind": "transformation",
+          "name": "lookup_enrichment",
+          "file": "src/accounts/contacts/contacts.py",
+          "line": 215,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "output": "LOCAL_ROUTING",
+          "lookup": "os.environ",
+          "inputs": [
+            "?"
+          ],
+          "function": "create_app",
+          "id": "439fd2d257afcfe920fd893c0dbb64b78f8e643a2b35bca62bbf596606de4428"
+        },
+        {
+          "kind": "transformation",
+          "name": "lookup_enrichment",
+          "file": "src/accounts/contacts/contacts.py",
+          "line": 214,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "output": "VERSION",
+          "lookup": "os.environ",
+          "inputs": [
+            "?"
+          ],
+          "function": "create_app",
+          "id": "df36e385caf1a99f955c99b2ddab389236fde9218732c6d8e1f2bdeaf60bbab1"
+        },
+        {
+          "kind": "transformation",
+          "name": "input_sanitization",
+          "file": "src/accounts/contacts/contacts.py",
+          "line": 118,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "operation": "bleach.clean",
+          "inputs": [
+            "v"
+          ],
+          "function": "add_contact",
+          "id": "e2506f6504ec9e8fad401dd661428d9870f29202f1f2cb0f56d6c539d69e2c42"
+        },
+        {
+          "kind": "transformation",
+          "name": "token_verification",
+          "file": "src/accounts/contacts/contacts.py",
+          "line": 112,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "operation": "jwt.decode",
+          "inputs": [
+            "token"
+          ],
+          "function": "add_contact",
+          "id": "f194de07ab0c4251b49caa5c77bbb3d1cb8dc03721a14644517c58cad9cbaa51"
+        },
+        {
+          "kind": "transformation",
+          "name": "token_verification",
+          "file": "src/accounts/contacts/contacts.py",
+          "line": 77,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "operation": "jwt.decode",
+          "inputs": [
+            "token"
+          ],
+          "function": "get_contacts",
+          "id": "f65d527ddc436326c89760ff332909aea00fbd6d8b1fc3dc42ab52f5149c2f50"
+        },
+        {
+          "kind": "transformation",
+          "name": "token_construction",
+          "file": "src/accounts/contacts/tests/constants.py",
+          "line": 40,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "operation": "jwt.encode",
+          "inputs": [
+            "EXAMPLE_USER_PAYLOAD",
+            "EXAMPLE_PRIVATE_KEY"
+          ],
+          "function": null,
+          "id": "f0205341f4bf603990e2b398eccf0d40e850cfd0ce678b8ae60aa4a83b4f0205"
+        },
+        {
+          "kind": "transformation",
+          "name": "token_verification",
+          "file": "src/accounts/userservice/tests/test_userservice.py",
+          "line": 209,
+          "status": "STATIC_EVIDENCE",
+          "extractor": "originspan-discovery-1",
+          "operation": "jwt.decode",
+          "inputs": [],
+          "function": "test_login_200_status_code_jwt_decoding_payload_passes",
+          "id": "d1ba509d57713562fa029460c8ba54c2c0f025888d8235ed4b99965bfe7a70e7"
+        }
+      ],
+      "total": 26,
+      "next_offset": 8,
+      "fact_scan": {
+        "total": 628,
+        "scanned": 628,
+        "truncated": false
+      },
+      "limitations": [
+        "Static source facts and candidate associations; no records or source excerpts returned"
+      ]
+    },
+    "documentation": {
+      "section": "documentation",
+      "items": [
+        {
+          "id": "ev-52372580c9cc00a590593cd9",
+          "title": "| [balance-reader](/src/ledger/balancereader)            | Java          | Provides efficient readable cache of user balances, as read from `ledger-db`.                                                ",
+          "evidence": {
+            "file": "README.md",
+            "line": 31
+          },
+          "definition": "| [balance-reader](/src/ledger/balancereader)            | Java          | Provides efficient readable cache of user balances, as read from `ledger-db`.                                                                |\n| [transaction-history](/src/ledger/transactionhistory)  | Java          | Provides efficient readable cache of past transactions, as read from `ledger-db`.                                                            |\n| [ledger-db](/src/ledger/ledger-db)                     | PostgreSQL    | Ledger of all transactions. Option to pre-populate with transactions for demo users.                                                         |\n| [user-service](/src/accounts/userservice)              | Python        | Manages user accounts and authentication. Signs JWTs used for authentication by other services.                                              |\n| [contacts](/src/accounts/c",
+          "status": "DOCUMENTED_CLAIM_NOT_RUNTIME_PROOF"
+        },
+        {
+          "id": "ev-8e4afc081076466578a86d24",
+          "title": "Deleting the cluster may take a few minutes.",
+          "evidence": {
+            "file": "README.md",
+            "line": 121
+          },
+          "definition": "\n   Deleting the cluster may take a few minutes.\n\n## Additional deployment options\n\n- **Workload Identity**: [See these instructions.](/docs/workload-identity.md)\n- **Cloud SQL**: [See these instructions](/extras/cloudsql) to replace the in-cluster databases with hosted Google Cloud SQL.\n- **Multi Cluster with Cloud SQL**: [See these instructions](/extras/cloudsql-multicluster) to replicate the app across two regions using GKE, Multi Cluster Ingress, and Google Cloud SQL.\n- **Istio**: [See these instructions](/extras/istio) to configure an IngressGateway.\n- **Anthos Service Mesh**: ASM requires Workload Identity to be enabled in your GKE cluster. [See the workload identity instructions](/docs/workload-identity.md) to configure and deploy the app. Then, apply `extras/istio/` to your cluster to configure frontend ingress.\n- **Java Monolith (VM)**: We provide a version of this app where the",
+          "status": "DOCUMENTED_CLAIM_NOT_RUNTIME_PROOF"
+        },
+        {
+          "id": "ev-c34bc09b4e162a976ed8827c",
+          "title": "After a few minutes, you should see the Pods in a `Running` state:",
+          "evidence": {
+            "file": "README.md",
+            "line": 91
+          },
+          "definition": "\n   After a few minutes, you should see the Pods in a `Running` state:\n\n   ```\n   NAME                                  READY   STATUS    RESTARTS   AGE\n   accounts-db-6f589464bc-6r7b7          1/1     Running   0          99s\n   balancereader-797bf6d7c5-8xvp6        1/1     Running   0          99s\n   contacts-769c4fb556-25pg2             1/1     Running   0          98s\n   frontend-7c96b54f6b-zkdbz             1/1     Running   0          98s\n   ledger-db-5b78474d4f-p6xcb            1/1     Running   0          98s\n   ledgerwriter-84bf44b95d-65mqf         1/1     Running   0          97s\n   loadgenerator-559667b6ff-4zsvb        1/1     Running   0          97s\n   transactionhistory-5569754896-z94cn   1/1     Running   0          97s\n   userservice-78dc876bff-pdhtl          1/1     Running   0          96s\n   ```\n\n7. Access the web frontend in a browser using the frontend's external IP.",
+          "status": "DOCUMENTED_CLAIM_NOT_RUNTIME_PROOF"
+        }
+      ],
+      "total": 137,
+      "next_offset": 3,
+      "fact_scan": {
+        "total": 628,
+        "scanned": 628,
+        "truncated": false
+      },
+      "limitations": [
+        "Static source facts and candidate associations; no records or source excerpts returned"
+      ]
+    },
+    "questions": {
+      "section": "questions",
+      "items": [
+        {
+          "question": "Which application fields map to approved C360 concepts?",
+          "status": "HUMAN_REVIEW_REQUIRED"
+        },
+        {
+          "question": "Which unfamiliar abbreviations need dictionary or owner confirmation?",
+          "status": "UNRESOLVED"
+        },
+        {
+          "question": "Do deployment variants or dynamic behavior change these source relationships?",
+          "status": "RUNTIME_NOT_OBSERVED"
+        }
+      ],
+      "total": 3,
+      "next_offset": null,
+      "fact_scan": {
+        "total": 628,
+        "scanned": 628,
+        "truncated": false
+      },
+      "limitations": [
+        "Static source facts and candidate associations; no records or source excerpts returned"
+      ]
+    }
+  },
+  "sql": {
+    "queries": [
+      {
+        "id": "012be8714706eecda91be31cea7c335b852a65b7e9d0b0f51c8dc6bce91e6161",
+        "file": "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionRepository.java",
+        "line": 54,
+        "language": "JPQL",
+        "status": "parsed",
+        "resolution": "EXPLICIT_JPA_MAPPING",
+        "mapping_evidence": [
+          {
+            "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/Transaction.java",
+            "line": 56
+          },
+          {
+            "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/Transaction.java",
+            "line": 47
+          }
+        ],
+        "metadata_sql": "SELECT t.* FROM TRANSACTIONS AS t WHERE t.TRANSACTION_ID > %(p1)s ORDER BY t.TRANSACTION_ID ASC NULLS FIRST",
+        "tables": [
+          "TRANSACTIONS"
+        ],
+        "columns": [
+          "t.*",
+          "t.TRANSACTION_ID"
+        ],
+        "schema_fields": [],
+        "value_lineage": [
+          {
+            "output": "amount",
+            "sources": [
+              "transactions.amount"
+            ],
+            "status": "AST_CONFIRMED",
+            "statement": 0,
+            "transformation": "t.amount AS amount"
+          },
+          {
+            "output": "from_route",
+            "sources": [
+              "transactions.from_route"
+            ],
+            "status": "AST_CONFIRMED",
+            "statement": 0,
+            "transformation": "t.from_route AS from_route"
+          }
+        ],
+        "predicate_dependencies": [
+          {
+            "kind": "WHERE",
+            "expression": "t.TRANSACTION_ID > %(p1)s",
+            "fields": [
+              "t.TRANSACTION_ID"
+            ],
+            "statement": 0
+          }
+        ],
+        "limitations": [
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved",
+          "Single-entity JPQL translated from explicit static JPA mappings; no runtime ORM behavior verified"
+        ]
+      },
+      {
+        "id": "0da7031b29b7b5a44e8a6f97076a35c8aabdcf762e97e62b83cea8a3fa6b851c",
+        "file": "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionRepository.java",
+        "line": 43,
+        "language": "JPQL",
+        "status": "parsed",
+        "resolution": "EXPLICIT_JPA_MAPPING",
+        "mapping_evidence": [
+          {
+            "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/Transaction.java",
+            "line": 56
+          },
+          {
+            "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/Transaction.java",
+            "line": 47
+          }
+        ],
+        "metadata_sql": "SELECT MAX(TRANSACTION_ID) FROM TRANSACTIONS",
+        "tables": [
+          "TRANSACTIONS"
+        ],
+        "columns": [
+          "TRANSACTION_ID"
+        ],
+        "schema_fields": [],
+        "value_lineage": [
+          {
+            "output": "_col_0",
+            "sources": [
+              "transactions.transaction_id"
+            ],
+            "status": "AST_CONFIRMED",
+            "statement": 0,
+            "transformation": "MAX(transactions.transaction_id) AS _col_0"
+          }
+        ],
+        "predicate_dependencies": [],
+        "limitations": [
+          "Unqualified columns may require schema metadata; no physical source is guessed",
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved",
+          "Single-entity JPQL translated from explicit static JPA mappings; no runtime ORM behavior verified"
+        ]
+      },
+      {
+        "id": "156da6d7e6a87c461b9334c7cc70fde0df51ab7452c7cf0353c47ecdab472113",
+        "file": "src/accounts/accounts-db/initdb/0-accounts-schema.sql",
+        "line": 1,
+        "language": "SQL",
+        "status": "parsed",
+        "resolution": null,
+        "mapping_evidence": [],
+        "metadata_sql": "/*\r\n * Copyright 2020, Google LLC.\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n *     http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n */ CREATE TABLE IF NOT EXISTS users (accountid CHAR(10) PRIMARY KEY, username VARCHAR(64) UNIQUE NOT NULL, passhash BYTEA NOT NULL, firstname VARCHAR(64) NOT NULL, lastname VARCHAR(64) NOT NULL, birthday DATE NOT NULL, timezone VARCHAR(8) NOT NULL, address VARCHAR(64) NOT NULL, state CHAR(2) NOT NULL, zip VARCHAR(5) NOT NULL, ssn CHAR(11) NOT NULL);\nCREATE INDEX IF NOT EXISTS idx_users_accountid ON users(accountid);\nCREATE INDEX IF NOT EXISTS idx_users_username ON users(username);\nCREATE TABLE IF NOT EXISTS contacts (username VARCHAR(64) NOT NULL, label VARCHAR(128) NOT NULL, account_num CHAR(10) NOT NULL, routing_num CHAR(9) NOT NULL, is_external BOOLEAN NOT NULL, FOREIGN KEY (username) REFERENCES users (username));\nCREATE INDEX IF NOT EXISTS idx_contacts_username ON contacts(username)",
+        "tables": [
+          "contacts",
+          "users"
+        ],
+        "columns": [
+          "accountid",
+          "username"
+        ],
+        "schema_fields": [
+          {
+            "table": "users",
+            "name": "accountid",
+            "data_type": "CHAR(10)"
+          },
+          {
+            "table": "users",
+            "name": "username",
+            "data_type": "VARCHAR(64)"
+          },
+          {
+            "table": "users",
+            "name": "passhash",
+            "data_type": "BYTEA"
+          },
+          {
+            "table": "users",
+            "name": "firstname",
+            "data_type": "VARCHAR(64)"
+          },
+          {
+            "table": "users",
+            "name": "lastname",
+            "data_type": "VARCHAR(64)"
+          },
+          {
+            "table": "users",
+            "name": "birthday",
+            "data_type": "DATE"
+          },
+          {
+            "table": "users",
+            "name": "timezone",
+            "data_type": "VARCHAR(8)"
+          },
+          {
+            "table": "users",
+            "name": "address",
+            "data_type": "VARCHAR(64)"
+          },
+          {
+            "table": "users",
+            "name": "state",
+            "data_type": "CHAR(2)"
+          },
+          {
+            "table": "users",
+            "name": "zip",
+            "data_type": "VARCHAR(5)"
+          },
+          {
+            "table": "users",
+            "name": "ssn",
+            "data_type": "CHAR(11)"
+          },
+          {
+            "table": "contacts",
+            "name": "username",
+            "data_type": "VARCHAR(64)"
+          },
+          {
+            "table": "contacts",
+            "name": "label",
+            "data_type": "VARCHAR(128)"
+          },
+          {
+            "table": "contacts",
+            "name": "account_num",
+            "data_type": "CHAR(10)"
+          },
+          {
+            "table": "contacts",
+            "name": "routing_num",
+            "data_type": "CHAR(9)"
+          },
+          {
+            "table": "contacts",
+            "name": "is_external",
+            "data_type": "BOOLEAN"
+          }
+        ],
+        "value_lineage": [],
+        "predicate_dependencies": [],
+        "limitations": [
+          "Unqualified columns may require schema metadata; no physical source is guessed",
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved"
+        ]
+      },
+      {
+        "id": "2033a46a7d6478767dc8b157ea55434e41383f85a0a5656b72a77502fab9306c",
+        "file": "src/ledger/transactionhistory/src/main/java/anthos/samples/bankofanthos/transactionhistory/TransactionRepository.java",
+        "line": 35,
+        "language": "JPQL",
+        "status": "parsed",
+        "resolution": "EXPLICIT_JPA_MAPPING",
+        "mapping_evidence": [
+          {
+            "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/Transaction.java",
+            "line": 56
+          },
+          {
+            "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/Transaction.java",
+            "line": 47
+          }
+        ],
+        "metadata_sql": "SELECT MAX(TRANSACTION_ID) FROM TRANSACTIONS",
+        "tables": [
+          "TRANSACTIONS"
+        ],
+        "columns": [
+          "TRANSACTION_ID"
+        ],
+        "schema_fields": [],
+        "value_lineage": [
+          {
+            "output": "_col_0",
+            "sources": [
+              "transactions.transaction_id"
+            ],
+            "status": "AST_CONFIRMED",
+            "statement": 0,
+            "transformation": "MAX(transactions.transaction_id) AS _col_0"
+          }
+        ],
+        "predicate_dependencies": [],
+        "limitations": [
+          "Unqualified columns may require schema metadata; no physical source is guessed",
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved",
+          "Single-entity JPQL translated from explicit static JPA mappings; no runtime ORM behavior verified"
+        ]
+      },
+      {
+        "id": "22df93c1090d491ba94f1972be40c7b03adde46ff375abfa78a98a6d295203bd",
+        "file": "src/ledger/transactionhistory/src/main/java/anthos/samples/bankofanthos/transactionhistory/TransactionRepository.java",
+        "line": 38,
+        "language": "JPQL",
+        "status": "parsed",
+        "resolution": "EXPLICIT_JPA_MAPPING",
+        "mapping_evidence": [
+          {
+            "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/Transaction.java",
+            "line": 56
+          },
+          {
+            "file": "src/ledger/balancereader/src/main/java/anthos/samples/bankofanthos/balancereader/Transaction.java",
+            "line": 47
+          }
+        ],
+        "metadata_sql": "SELECT t.* FROM TRANSACTIONS AS t WHERE (t.FROM_ACCT = %(p1)s AND t.FROM_ROUTE = %(p2)s) OR (t.TO_ACCT = %(p1)s AND t.TO_ROUTE = %(p2)s) ORDER BY t.TIMESTAMP DESC NULLS LAST",
+        "tables": [
+          "TRANSACTIONS"
+        ],
+        "columns": [
+          "t.*",
+          "t.FROM_ACCT",
+          "t.FROM_ROUTE",
+          "t.TIMESTAMP",
+          "t.TO_ACCT",
+          "t.TO_ROUTE"
+        ],
+        "schema_fields": [],
+        "value_lineage": [
+          {
+            "output": "amount",
+            "sources": [
+              "transactions.amount"
+            ],
+            "status": "AST_CONFIRMED",
+            "statement": 0,
+            "transformation": "t.amount AS amount"
+          },
+          {
+            "output": "from_route",
+            "sources": [
+              "transactions.from_route"
+            ],
+            "status": "AST_CONFIRMED",
+            "statement": 0,
+            "transformation": "t.from_route AS from_route"
+          }
+        ],
+        "predicate_dependencies": [
+          {
+            "kind": "WHERE",
+            "expression": "(t.FROM_ACCT = %(p1)s AND t.FROM_ROUTE = %(p2)s) OR (t.TO_ACCT = %(p1)s AND t.TO_ROUTE = %(p2)s)",
+            "fields": [
+              "t.FROM_ACCT",
+              "t.FROM_ROUTE",
+              "t.TO_ACCT",
+              "t.TO_ROUTE"
+            ],
+            "statement": 0
+          }
+        ],
+        "limitations": [
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved",
+          "Single-entity JPQL translated from explicit static JPA mappings; no runtime ORM behavior verified"
+        ]
+      },
+      {
+        "id": "5d16c3222631fe0512b702584b4bc6eba8af5239c33b0291f1d0093e313323b1",
+        "file": "src/ledger/ledger-db/initdb/0_init_tables.sql",
+        "line": 1,
+        "language": "SQL",
+        "status": "partial",
+        "resolution": null,
+        "mapping_evidence": [],
+        "metadata_sql": "/* Copyright 2020 Google LLC */ /* Licensed under the Apache License, Version 2.0 (the \"License\"); */ /* you may not use this file except in compliance with the License. */ /* You may obtain a copy of the License at */ /*      http://www.apache.org/licenses/LICENSE-2.0 */ /* Unless required by applicable law or agreed to in writing, software */ /* distributed under the License is distributed on an \"AS IS\" BASIS, */ /* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. */ /* See the License for the specific language governing permissions and */ /* limitations under the License. */ CREATE TABLE TRANSACTIONS (TRANSACTION_ID BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY, FROM_ACCT CHAR(10) NOT NULL, TO_ACCT CHAR(10) NOT NULL, FROM_ROUTE CHAR(9) NOT NULL, TO_ROUTE CHAR(9) NOT NULL, AMOUNT INT NOT NULL, TIMESTAMP TIMESTAMP NOT NULL);\n/* index account number/routing number pairs */ CREATE INDEX ON TRANSACTIONS(FROM_ACCT, FROM_ROUTE, TIMESTAMP);\nCREATE INDEX ON TRANSACTIONS(TO_ACCT, TO_ROUTE, TIMESTAMP)",
+        "tables": [
+          "TRANSACTIONS"
+        ],
+        "columns": [
+          "FROM_ACCT",
+          "FROM_ROUTE",
+          "TIMESTAMP",
+          "TO_ACCT",
+          "TO_ROUTE"
+        ],
+        "schema_fields": [
+          {
+            "table": "TRANSACTIONS",
+            "name": "TRANSACTION_ID",
+            "data_type": "BIGINT"
+          },
+          {
+            "table": "TRANSACTIONS",
+            "name": "FROM_ACCT",
+            "data_type": "CHAR(10)"
+          },
+          {
+            "table": "TRANSACTIONS",
+            "name": "TO_ACCT",
+            "data_type": "CHAR(10)"
+          },
+          {
+            "table": "TRANSACTIONS",
+            "name": "FROM_ROUTE",
+            "data_type": "CHAR(9)"
+          },
+          {
+            "table": "TRANSACTIONS",
+            "name": "TO_ROUTE",
+            "data_type": "CHAR(9)"
+          },
+          {
+            "table": "TRANSACTIONS",
+            "name": "AMOUNT",
+            "data_type": "INT"
+          },
+          {
+            "table": "TRANSACTIONS",
+            "name": "TIMESTAMP",
+            "data_type": "TIMESTAMP"
+          }
+        ],
+        "value_lineage": [],
+        "predicate_dependencies": [],
+        "limitations": [
+          "An unsupported command was not semantically analyzed",
+          "An unsupported command was not semantically analyzed",
+          "Unqualified columns may require schema metadata; no physical source is guessed",
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved"
+        ]
+      },
+      {
+        "id": "65b3aa4f2f4d6c64be341dec5c20778bb0fe8bb0bb057120a0a2e6c2a9caa4c6",
+        "file": "src/accounts/accounts-db/initdb/1-load-testdata.sql",
+        "line": 1,
+        "language": "SQL",
+        "status": "parsed",
+        "resolution": null,
+        "mapping_evidence": [],
+        "metadata_sql": "/*\r\n * Copyright 2020, Google LLC.\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n *     http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n */ INSERT INTO users VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s), (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s), (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s), (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING;\nINSERT INTO contacts VALUES (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s) ON CONFLICT DO NOTHING;\nINSERT INTO contacts VALUES (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s), (%s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",
+        "tables": [
+          "contacts",
+          "users"
+        ],
+        "columns": [],
+        "schema_fields": [],
+        "value_lineage": [],
+        "predicate_dependencies": [],
+        "limitations": [
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved"
+        ]
+      },
+      {
+        "id": "765af8fadad039335be845f86c44b22e9a266d0024938f1a7631e8d6a1abc4e4",
+        "file": "src/ledgermonolith/src/main/java/anthos/samples/bankofanthos/ledgermonolith/TransactionRepository.java",
+        "line": 32,
+        "language": "SQL",
+        "status": "parsed",
+        "resolution": null,
+        "mapping_evidence": [],
+        "metadata_sql": "SELECT (SELECT SUM(AMOUNT) FROM TRANSACTIONS AS t WHERE (TO_ACCT = %(p1)s AND TO_ROUTE = %(p2)s)) - (SELECT COALESCE((SELECT SUM(AMOUNT) FROM TRANSACTIONS AS t WHERE (FROM_ACCT = %(p1)s AND FROM_ROUTE = %(p2)s)), %s))",
+        "tables": [
+          "TRANSACTIONS"
+        ],
+        "columns": [
+          "AMOUNT",
+          "FROM_ACCT",
+          "FROM_ROUTE",
+          "TO_ACCT",
+          "TO_ROUTE"
+        ],
+        "schema_fields": [],
+        "value_lineage": [],
+        "predicate_dependencies": [
+          {
+            "kind": "WHERE",
+            "expression": "(TO_ACCT = %(p1)s AND TO_ROUTE = %(p2)s)",
+            "fields": [
+              "TO_ACCT",
+              "TO_ROUTE"
+            ],
+            "statement": 0
+          },
+          {
+            "kind": "WHERE",
+            "expression": "(FROM_ACCT = %(p1)s AND FROM_ROUTE = %(p2)s)",
+            "fields": [
+              "FROM_ACCT",
+              "FROM_ROUTE"
+            ],
+            "statement": 0
+          }
+        ],
+        "limitations": [
+          "Unqualified columns may require schema metadata; no physical source is guessed",
+          "Static SQL only; runtime-generated SQL and stored-procedure semantics are not resolved"
+        ]
+      }
+    ],
+    "next_offset": 8,
+    "limitations": [
+      "Static query inventory; dynamic SQL remains unresolved",
+      "Embedded literal values are not returned as customer data"
+    ]
+  },
+  "coverage": {
+    "file_states": {
+      "INDEXED": 340,
+      "UNSUPPORTED": 108
+    },
+    "facts": 628,
+    "facts_scanned": 628
+  },
+  "c360_handoff": {
+    "status": "DRAFT_REQUIRES_REVIEW",
+    "source_application": "13e048ca30164ef99b33548764dae60e",
+    "source_analysis": "9915df3291f04e8186ef309d559bc543",
+    "candidate_fields_section": "fields",
+    "mappings": [],
+    "unresolved_questions": [
+      {
+        "question": "Which application fields map to approved C360 concepts?",
+        "status": "HUMAN_REVIEW_REQUIRED"
+      },
+      {
+        "question": "Which unfamiliar abbreviations need dictionary or owner confirmation?",
+        "status": "UNRESOLVED"
+      },
+      {
+        "question": "Do deployment variants or dynamic behavior change these source relationships?",
+        "status": "RUNTIME_NOT_OBSERVED"
+      }
+    ],
+    "next_step": "Host AI proposes cited mappings to the supplied target C360 schema; separate human review approves them. No target writes."
+  },
+  "continuation": {
+    "tool": "get_discovery_section",
+    "sections": [
+      "purpose",
+      "apis",
+      "fields",
+      "orm",
+      "transformations",
+      "documentation",
+      "questions"
+    ],
+    "sql_tool": "list_sql_queries",
+    "coverage_tool": "get_discovery_coverage",
+    "instruction": "Follow next_offset until the requested scope is covered. A single user prompt may require multiple tool calls."
+  },
+  "limitations": [
+    "Source analysis cannot guarantee complete runtime discovery or business meaning",
+    "No individual records inspected; no protected traits inferred",
+    "All section limits and snapshot/version boundaries apply",
+    "Imported snapshots produced before the discovery upgrade must be reanalyzed to obtain framework facts"
+  ],
+  "response_budget": {
+    "target_bytes": 60000,
+    "serialized_bytes_before_budget": 52798,
+    "effective_section_limit": 8,
+    "note": "Overview only. Follow all section continuations for detailed discovery."
+  }
+}

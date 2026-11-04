@@ -1,0 +1,34 @@
+{
+  "image": "originspan-mcp:discovery-0.4",
+  "memory_limit_bytes": 536870912,
+  "source_zip_bytes": 397300,
+  "checks": {
+    "readiness": true,
+    "unauthorized_denied": true,
+    "banking_analysis_completed": true,
+    "configured_service_dependencies": true,
+    "review_required_for_c360": true,
+    "field_usage_trails": true,
+    "explicit_jpql_resolution": true,
+    "cross_project_denied": true,
+    "self_approval_denied": true
+  },
+  "limitations": [
+    "Local Linux container, not the live Render deployment",
+    "No host-AI answer comparison; no large-project or terabyte capacity claim"
+  ],
+  "tool_count": 23,
+  "analysis_seconds": 15.47831119998591,
+  "snapshot": {
+    "files": 312,
+    "inventoried_files": 312,
+    "bytes": 865607,
+    "consistency": "per-file content snapshot; filesystem traversal is not a transactional VCS checkout"
+  },
+  "evidence_count": 3931,
+  "dossier_seconds": 0.1368600000278093,
+  "dossier_bytes": 52547,
+  "resolved_jpql_queries": 8,
+  "oom_killed": false,
+  "status": "PASS"
+}

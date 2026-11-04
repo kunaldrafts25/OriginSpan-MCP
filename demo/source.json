@@ -1,0 +1,8 @@
+{
+  "sample": "bank-of-anthos",
+  "repository": "https://github.com/GoogleCloudPlatform/bank-of-anthos",
+  "revision": "db35fea9fd090150e2398106aadb475576f80d94",
+  "archive_sha256": "efe4d7b99b18cd2cd89858a926ac4a6fc12ba98c5a99f2d1e8949698b68e6f1f",
+  "license": "Apache-2.0",
+  "scope": "Public sample code and metadata only; no client sources or live records"
+}

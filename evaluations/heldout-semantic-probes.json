@@ -1,0 +1,253 @@
+{
+  "version": "feasibility-heldout-1",
+  "scope": "Maintainer-authored synthetic probes frozen before the final prompt/decoding change; no independent owner review",
+  "cases": [
+    {
+      "id": "owner-key",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/owner-key.md",
+          "line": 1,
+          "metadata": {
+            "name": "AID",
+            "entity": "AccountOwnership",
+            "description": "Foreign key pointing to the account owner customer record."
+          }
+        }
+      ],
+      "choices": [
+        "customer_identifier",
+        "loan_application_identifier",
+        "unresolved"
+      ],
+      "expected": "customer_identifier",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "application-key",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/application-key.md",
+          "line": 1,
+          "metadata": {
+            "name": "AID",
+            "entity": "LoanDecision",
+            "description": "References the submitted loan application; not the applicant."
+          }
+        }
+      ],
+      "choices": [
+        "customer_identifier",
+        "loan_application_identifier",
+        "unresolved"
+      ],
+      "expected": "loan_application_identifier",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "request-link",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/request-link.md",
+          "line": 1,
+          "metadata": {
+            "name": "rq_link",
+            "entity": "Telemetry",
+            "description": "A token shared by all log entries belonging to the same HTTP request."
+          }
+        }
+      ],
+      "choices": [
+        "customer_identifier",
+        "correlation_identifier",
+        "unresolved"
+      ],
+      "expected": "correlation_identifier",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "opaque-dictionary",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/opaque-dictionary.md",
+          "line": 1,
+          "metadata": {
+            "name": "Z92",
+            "definition": "The date when the insurance coverage ends."
+          }
+        }
+      ],
+      "choices": [
+        "date_of_birth",
+        "coverage_end_date",
+        "unresolved"
+      ],
+      "expected": "coverage_end_date",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "misleading-birth",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/misleading-birth.md",
+          "line": 1,
+          "metadata": {
+            "name": "birth_ts",
+            "entity": "JobExecution",
+            "description": "Timestamp when this batch job execution was started."
+          }
+        }
+      ],
+      "choices": [
+        "date_of_birth",
+        "job_start_time",
+        "unresolved"
+      ],
+      "expected": "job_start_time",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "city-not-birthplace",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/city-not-birthplace.md",
+          "line": 1,
+          "metadata": {
+            "name": "cust_city",
+            "entity": "Shipment",
+            "description": "City for delivery of the parcel; no birthplace is recorded."
+          }
+        }
+      ],
+      "choices": [
+        "birthplace",
+        "shipping_city",
+        "unresolved"
+      ],
+      "expected": "shipping_city",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "lc-not-language",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/lc-not-language.md",
+          "line": 1,
+          "metadata": {
+            "name": "lc",
+            "entity": "CourseRegistration",
+            "description": "Foreign key to the learning course catalog."
+          }
+        }
+      ],
+      "choices": [
+        "preferred_language",
+        "course_identifier",
+        "unresolved"
+      ],
+      "expected": "course_identifier",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "french-date",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/french-date.md",
+          "line": 1,
+          "metadata": {
+            "name": "date_echeance",
+            "description": "Date limite de paiement de la facture."
+          }
+        }
+      ],
+      "choices": [
+        "date_of_birth",
+        "invoice_due_date",
+        "unresolved"
+      ],
+      "expected": "invoice_due_date",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "unexplained-code",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/unexplained-code.md",
+          "line": 1,
+          "metadata": {
+            "name": "Q88",
+            "data_type": "VARCHAR(16)",
+            "description": "No definition, declaring entity, or use is available."
+          }
+        }
+      ],
+      "choices": [
+        "nationality",
+        "postal_code",
+        "unresolved"
+      ],
+      "expected": "unresolved",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "conflicting-party-key",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "heldout/dictionary.md",
+          "line": 1,
+          "metadata": {
+            "name": "P_ID",
+            "definition": "P_ID is the policy identifier in the selected table."
+          }
+        },
+        {
+          "ref": "E000002",
+          "file": "heldout/dictionary.md",
+          "line": 2,
+          "metadata": {
+            "name": "P_ID",
+            "definition": "P_ID is the payment identifier in the same selected table and snapshot. Neither definition is approved."
+          }
+        }
+      ],
+      "choices": [
+        "policy_identifier",
+        "payment_identifier",
+        "ambiguous"
+      ],
+      "expected": "ambiguous",
+      "required_citations": [
+        "E000001",
+        "E000002"
+      ]
+    }
+  ]
+}

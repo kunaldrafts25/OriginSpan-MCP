@@ -1,0 +1,13 @@
+{
+  "status": "PASSED",
+  "wheel": "originspan_mcp-0.3.0-py3-none-any.whl",
+  "sha256": "457a807de8ecc6082dc36a40c533b27852c8b3f8d8d34100936b86af36418c83",
+  "source_modules": 24,
+  "checks": [
+    "wheel/source parity",
+    "viewer asset parity",
+    "patched JWT metadata",
+    "fixture secret exclusion"
+  ],
+  "limitation": "fixture-specific secret scan; not a comprehensive sensitive-content detector"
+}

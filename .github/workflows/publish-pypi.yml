@@ -1,0 +1,52 @@
+name: Publish verified wheel to PyPI
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Published GitHub release tag
+        required: true
+        default: v0.5.2rc2
+permissions:
+  contents: read
+concurrency:
+  group: pypi-${{ inputs.release_tag }}
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Fetch and verify released wheel
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          RELEASE_REPO: ${{ github.repository }}
+        run: |
+          python scripts/prepare_pypi_release.py
+          python -m pip install twine
+          python -m twine check --strict dist/*.whl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-pypi-wheel
+          path: dist/*.whl
+          if-no-files-found: error
+  publish:
+    needs: prepare
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/originspan-mcp
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-pypi-wheel
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/
+          attestations: true

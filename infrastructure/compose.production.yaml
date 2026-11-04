@@ -1,0 +1,71 @@
+name: diamond-discovery
+x-runtime: &runtime
+  image: originspan-mcp:0.3.0
+  init: true
+  restart: unless-stopped
+  read_only: true
+  tmpfs: ["/tmp:size=134217728,mode=1777"]
+  cap_drop: ["ALL"]
+  security_opt: ["no-new-privileges:true"]
+  pids_limit: 256
+  mem_limit: 4g
+  environment: &environment
+    DIAMOND_STATE: /state
+    DIAMOND_DATABASE_URL: postgresql+psycopg://diamond_app:${DIAMOND_DB_PASSWORD:?Supply a generated URL-safe app DB password}@database:5432/diamond
+    DIAMOND_TRUSTED_ROOTS: /sources
+    DIAMOND_EXTERNAL_WORKERS: "true"
+    DIAMOND_PGVECTOR: "true"
+    DIAMOND_MAX_ACTIVE_ANALYSES: "8"
+    DIAMOND_MIN_FREE_BYTES: "1073741824"
+    DIAMOND_LOG_JSON: "true"
+    DIAMOND_OIDC_ISSUER: ${DIAMOND_OIDC_ISSUER:?Configure the customer identity provider}
+    DIAMOND_OIDC_JWKS: ${DIAMOND_OIDC_JWKS:?Configure trusted JWKS}
+    DIAMOND_RESOURCE_URL: ${DIAMOND_RESOURCE_URL:?Configure the HTTPS resource URL}
+  volumes:
+    - state:/state
+    - ${DIAMOND_SOURCE_DIR:?Choose the operator-managed source directory}:/sources:ro
+  depends_on:
+    database:
+      condition: service_healthy
+services:
+  database:
+    image: pgvector/pgvector:0.8.6-pg16-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DIAMOND_DB_ADMIN_PASSWORD:?Supply a distinct database-owner password}
+      POSTGRES_DB: diamond
+      DIAMOND_DB_PASSWORD: ${DIAMOND_DB_PASSWORD}
+    volumes:
+      - database:/var/lib/postgresql/data
+      - ./bootstrap-production.sh:/docker-entrypoint-initdb.d/01-app.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U postgres -d diamond"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  migrate:
+    <<: *runtime
+    restart: "no"
+    command: ["migrate"]
+  api:
+    <<: *runtime
+    command: ["serve","--transport","http","--host","0.0.0.0"]
+    ports: ["127.0.0.1:8765:8765"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD","python","-c","import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/readyz',timeout=2)"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+  worker:
+    <<: *runtime
+    command: ["worker"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+volumes:
+  database:
+  state:

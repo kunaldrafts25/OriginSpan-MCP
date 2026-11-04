@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETED",
+  "index_seconds": 13.1795306999702,
+  "repository": "https://github.com/GoogleCloudPlatform/bank-of-anthos",
+  "reviewed_revision": "db35fea9fd090150e2398106aadb475576f80d94",
+  "endpoint_count": 39,
+  "table_count": 3,
+  "ddl_column_count": 23,
+  "routes_match": true,
+  "tables_match": true,
+  "columns_match": true,
+  "missing_routes": [],
+  "unexpected_routes": [],
+  "missing_columns": [],
+  "unexpected_columns": [],
+  "application_id": "8562460f6ecf4217bba1b831af886d19",
+  "analysis_id": "780853dfedca4491bfe03e1dd87690a3",
+  "source_bytes": 929065
+}

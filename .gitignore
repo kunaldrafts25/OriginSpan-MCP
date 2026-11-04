@@ -1,0 +1,12 @@
+.venv/
+.diamond/
+.runtime/
+__pycache__/
+*.egg-info/
+artifacts/
+dist/
+build/
+.env
+*.sqlite*
+
+.originspan/

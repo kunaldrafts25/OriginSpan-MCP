@@ -1,0 +1,403 @@
+{
+  "suite_sha256": "637600ebe03805b77f382830e819d4c8d2b8a36fa3438be55f0e76d23c35eb1a",
+  "model": "unsloth/Qwen3.5-2B-GGUF",
+  "model_sha256": "aaf42c8b7c3cab2bf3d69c355048d4a0ee9973d48f16c731c0520ee914699223",
+  "revision": "f6d5376be1edb4d416d56da11e5397a961aca8ae",
+  "mode": "field-annotations",
+  "inference_contract": "a2a8922df6a3d250c26dcf6b537cbeee75b2e96f8d5c7dc2bfeee77d409d1f47",
+  "results": [
+    {
+      "id": "customer-alias",
+      "passed": false,
+      "decision": "customer identifier",
+      "expected": "customer_identifier",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "customer identifier",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 11.066
+    },
+    {
+      "id": "contract-alias",
+      "passed": true,
+      "decision": "contract_identifier",
+      "expected": "contract_identifier",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "contract_identifier",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 6.178
+    },
+    {
+      "id": "logging-alias",
+      "passed": true,
+      "decision": "correlation_identifier",
+      "expected": "correlation_identifier",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "correlation_identifier",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 5.308
+    },
+    {
+      "id": "unfamiliar-dictionary",
+      "passed": false,
+      "decision": "contract renewal date",
+      "expected": "contract_renewal_date",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "contract renewal date",
+            "status": "hypothesis",
+            "citations": [
+              "E000001",
+              "E000002"
+            ]
+          }
+        ]
+      },
+      "seconds": 5.142
+    },
+    {
+      "id": "no-context",
+      "passed": false,
+      "decision": "unresolved",
+      "expected": "unresolved",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "unresolved",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 5.207
+    },
+    {
+      "id": "contradictory-definition",
+      "passed": false,
+      "decision": "customer identifier",
+      "expected": "ambiguous",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "customer identifier",
+            "status": "unresolved",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 4.899
+    },
+    {
+      "id": "misleading-date",
+      "passed": false,
+      "decision": "unresolved",
+      "expected": "unresolved",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "unresolved",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 5.037
+    },
+    {
+      "id": "country-not-nationality",
+      "passed": true,
+      "decision": "servicing_country",
+      "expected": "servicing_country",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "servicing_country",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 5.009
+    },
+    {
+      "id": "multilingual-meaning",
+      "passed": false,
+      "decision": "data of birth",
+      "expected": "date_of_birth",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "data of birth",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 4.881
+    },
+    {
+      "id": "language-not-nationality",
+      "passed": false,
+      "decision": "user-selected language",
+      "expected": "preferred_language",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "user-selected language",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 5.038
+    }
+  ],
+  "passed": 3,
+  "total": 10,
+  "usage": [
+    {
+      "seconds": 10.984,
+      "input_tokens": 292,
+      "output_tokens": 39,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 0,
+      "templated_input_tokens": 292,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 5.317,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 292,
+        "prompt_ms": 5306.816,
+        "prompt_per_second": 55.023577225967514,
+        "predicted_n": 39,
+        "predicted_ms": 5644.318,
+        "predicted_per_second": 6.732434281697098
+      }
+    },
+    {
+      "seconds": 6.13,
+      "input_tokens": 289,
+      "output_tokens": 39,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 289,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.651,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 217,
+        "prompt_ms": 2684.191,
+        "prompt_per_second": 80.84372535337462,
+        "predicted_n": 39,
+        "predicted_ms": 3434.783,
+        "predicted_per_second": 11.063289878865712
+      }
+    },
+    {
+      "seconds": 5.293,
+      "input_tokens": 291,
+      "output_tokens": 40,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 291,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.432,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 219,
+        "prompt_ms": 2438.0,
+        "prompt_per_second": 89.82772764561116,
+        "predicted_n": 40,
+        "predicted_ms": 2846.203,
+        "predicted_per_second": 13.702466057410522
+      }
+    },
+    {
+      "seconds": 5.128,
+      "input_tokens": 326,
+      "output_tokens": 48,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 326,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.35,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 254,
+        "prompt_ms": 2355.085,
+        "prompt_per_second": 107.8517335892335,
+        "predicted_n": 48,
+        "predicted_ms": 2766.717,
+        "predicted_per_second": 16.987642754933013
+      }
+    },
+    {
+      "seconds": 5.191,
+      "input_tokens": 279,
+      "output_tokens": 39,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 279,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.248,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 207,
+        "prompt_ms": 2251.613,
+        "prompt_per_second": 91.93409346988138,
+        "predicted_n": 39,
+        "predicted_ms": 2931.227,
+        "predicted_per_second": 12.96385438589369
+      }
+    },
+    {
+      "seconds": 4.884,
+      "input_tokens": 325,
+      "output_tokens": 38,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 325,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.443,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 253,
+        "prompt_ms": 2446.825,
+        "prompt_per_second": 103.39930317860902,
+        "predicted_n": 38,
+        "predicted_ms": 2428.357,
+        "predicted_per_second": 15.236639423280844
+      }
+    },
+    {
+      "seconds": 5.026,
+      "input_tokens": 289,
+      "output_tokens": 39,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 289,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.258,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 217,
+        "prompt_ms": 2265.017,
+        "prompt_per_second": 95.80502044797015,
+        "predicted_n": 39,
+        "predicted_ms": 2754.765,
+        "predicted_per_second": 13.794280092857287
+      }
+    },
+    {
+      "seconds": 4.995,
+      "input_tokens": 288,
+      "output_tokens": 40,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 288,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.251,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 216,
+        "prompt_ms": 2258.594,
+        "prompt_per_second": 95.63471788200978,
+        "predicted_n": 40,
+        "predicted_ms": 2728.363,
+        "predicted_per_second": 14.294285621084878
+      }
+    },
+    {
+      "seconds": 4.868,
+      "input_tokens": 292,
+      "output_tokens": 40,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 292,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.135,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 220,
+        "prompt_ms": 2140.107,
+        "prompt_per_second": 102.79859838783763,
+        "predicted_n": 40,
+        "predicted_ms": 2718.273,
+        "predicted_per_second": 14.347344803115801
+      }
+    },
+    {
+      "seconds": 5.024,
+      "input_tokens": 287,
+      "output_tokens": 40,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 287,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.213,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 215,
+        "prompt_ms": 2217.964,
+        "prompt_per_second": 96.93574828085578,
+        "predicted_n": 40,
+        "predicted_ms": 2798.215,
+        "predicted_per_second": 13.937456557126596
+      }
+    }
+  ],
+  "resources": {
+    "peak_rss_mib": 1372.8,
+    "gpu_memory_mib": null,
+    "memory_limit_hit": false
+  },
+  "seconds": 64.906,
+  "qualification": "EXACT_LABEL_PROTOCOL_CHECK_ONLY_NOT_DISCOVERY_ACCURACY_CERTIFICATION",
+  "independent_domain_owner_review": false
+}

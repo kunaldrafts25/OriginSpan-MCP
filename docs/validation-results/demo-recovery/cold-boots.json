@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "network": "none; loopback-only MCP probe",
+  "memory_limit": "512 MiB, swap disabled",
+  "boots": [
+    {
+      "version": "0.5.1",
+      "application_id": "1600e7d6f4f64d3395a57f17c06991cf",
+      "analysis_id": "0999459b493e43a78f228fe009408b4c",
+      "files": 321,
+      "evidence_count": 4076,
+      "probe_seconds": 3.3798617719985486,
+      "seed_owner": "bundled-public-demo",
+      "source_uploaded": false,
+      "indexing_required": false
+    },
+    {
+      "version": "0.5.1",
+      "application_id": "1600e7d6f4f64d3395a57f17c06991cf",
+      "analysis_id": "0999459b493e43a78f228fe009408b4c",
+      "files": 321,
+      "evidence_count": 4076,
+      "probe_seconds": 2.111216653000156,
+      "seed_owner": "bundled-public-demo",
+      "source_uploaded": false,
+      "indexing_required": false
+    }
+  ],
+  "checks": [
+    "completed public demo available on first boot",
+    "no upload or runtime indexing",
+    "empty tmpfs restored after restart",
+    "stable bundled application and analysis IDs",
+    "HTML country metadata",
+    "eight supported JPQL resolutions",
+    "no OOM"
+  ],
+  "limitation": "Public sample recovery, not persistence of private uploads or AI proposals"
+}

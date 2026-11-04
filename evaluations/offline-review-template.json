@@ -1,0 +1,14 @@
+{
+  "TASK_ID": {
+    "reviewer": "REQUIRED",
+    "run_id": "EXACT_RUN_ID",
+    "supported_claims": 0,
+    "unsupported_claims": 0,
+    "required_findings": 0,
+    "found_required_findings": 0,
+    "citations_valid": false,
+    "ambiguity_correct": null,
+    "acceptable_without_online": false,
+    "security_passed": false
+  }
+}

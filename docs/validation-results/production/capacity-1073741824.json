@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETED",
+  "requested_bytes": 1073741824,
+  "actual_selected_bytes": 1073741824,
+  "selected_files": 1024,
+  "evidence_count": 7168,
+  "workers": 4,
+  "generation_seconds": 4.227690599975176,
+  "index_seconds": 90.62317509995773,
+  "query_seconds": 0.26155980001203716,
+  "query_results": 10,
+  "semantic_indexing": false,
+  "sparse_files": false,
+  "fixture": "Repeated independent Python source declarations plus comment padding",
+  "limitations": [
+    "Capacity fixture is not a real-world quality or language-mix benchmark",
+    "No terabyte throughput claim",
+    "Process RSS not measured in this harness"
+  ]
+}

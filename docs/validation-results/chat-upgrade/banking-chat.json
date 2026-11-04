@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "checks": {
+    "markdown_default": true,
+    "diagram_in_chat": true,
+    "field_table_and_sources": true,
+    "country_interface_gap": true,
+    "source_field_labels": true,
+    "no_json_unpacking_needed": true,
+    "no_blind_documentation_paging": true,
+    "less_text_than_legacy_json": true,
+    "no_clipped_report": true,
+    "source_query_lineage": true
+  },
+  "sdk_tool_calls_for_overview": 2,
+  "sdk_seconds": 0.23275159997865558,
+  "chat_text_bytes": 15217,
+  "legacy_json_text_bytes": 74666,
+  "text_reduction_percent": 79.6,
+  "application_id": "34068e9e04974b5499ce821d7c5c7152",
+  "analysis_id": "a211933d99674bc48e8f349e71b007b1",
+  "limitations": [
+    "In-process MCP protocol results, not Copilot rendering or host-model answer quality",
+    "Source now includes HTML metadata; no individual records read",
+    "An overview is not exhaustive runtime discovery; detailed topics may need more calls"
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "version": "feasibility-probes-1",
+  "scope": "Maintainer-authored synthetic decision probes; not an independent business benchmark",
+  "cases": [
+    {
+      "id": "customer-alias",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/customer-alias.md",
+          "line": 1,
+          "metadata": {
+            "name": "C_ID",
+            "entity": "Customer",
+            "data_type": "UUID",
+            "description": "Primary key used by GET /customers/{C_ID} and customer enrollment"
+          }
+        }
+      ],
+      "choices": [
+        "customer_identifier",
+        "contract_identifier",
+        "correlation_identifier",
+        "unresolved"
+      ],
+      "expected": "customer_identifier",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "contract-alias",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/contract-alias.md",
+          "line": 1,
+          "metadata": {
+            "name": "C_ID",
+            "entity": "Contract",
+            "data_type": "UUID",
+            "description": "Primary key referenced by contract renewal and contract amendment APIs"
+          }
+        }
+      ],
+      "choices": [
+        "customer_identifier",
+        "contract_identifier",
+        "correlation_identifier",
+        "unresolved"
+      ],
+      "expected": "contract_identifier",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "logging-alias",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/logging-alias.md",
+          "line": 1,
+          "metadata": {
+            "name": "cid",
+            "entity": "RequestContext",
+            "description": "Copied from X-Correlation-ID header into log trace context; newly generated per request"
+          }
+        }
+      ],
+      "choices": [
+        "customer_identifier",
+        "contract_identifier",
+        "correlation_identifier",
+        "unresolved"
+      ],
+      "expected": "correlation_identifier",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "unfamiliar-dictionary",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/unfamiliar-dictionary.md",
+          "line": 1,
+          "metadata": {
+            "name": "X17",
+            "entity": "Policy",
+            "data_type": "DATE"
+          }
+        },
+        {
+          "ref": "E000002",
+          "file": "fixture/unfamiliar-dictionary.md",
+          "line": 2,
+          "metadata": {
+            "name": "X17",
+            "definition": "X17 is the contract renewal date, not the date of birth."
+          }
+        }
+      ],
+      "choices": [
+        "date_of_birth",
+        "contract_renewal_date",
+        "unresolved"
+      ],
+      "expected": "contract_renewal_date",
+      "required_citations": [
+        "E000002"
+      ]
+    },
+    {
+      "id": "no-context",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/no-context.md",
+          "line": 1,
+          "metadata": {
+            "name": "X17",
+            "data_type": "INTEGER",
+            "description": "No declaring entity, definition or usage is available."
+          }
+        }
+      ],
+      "choices": [
+        "customer_identifier",
+        "annual_income",
+        "unresolved"
+      ],
+      "expected": "unresolved",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "contradictory-definition",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/contradictory-definition.md",
+          "line": 1,
+          "metadata": {
+            "name": "C_ID",
+            "definition": "In this table C_ID means customer identifier."
+          }
+        },
+        {
+          "ref": "E000002",
+          "file": "fixture/contradictory-definition.md",
+          "line": 2,
+          "metadata": {
+            "name": "C_ID",
+            "definition": "For the same table and snapshot, C_ID means contract identifier. Neither entry is reviewed."
+          }
+        }
+      ],
+      "choices": [
+        "customer_identifier",
+        "contract_identifier",
+        "ambiguous"
+      ],
+      "expected": "ambiguous",
+      "required_citations": [
+        "E000001",
+        "E000002"
+      ]
+    },
+    {
+      "id": "misleading-date",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/misleading-date.md",
+          "line": 1,
+          "metadata": {
+            "name": "dt_b",
+            "entity": "Customer",
+            "data_type": "DATE",
+            "description": "No definition or use of this date field is provided."
+          }
+        }
+      ],
+      "choices": [
+        "date_of_birth",
+        "contract_renewal_date",
+        "unresolved"
+      ],
+      "expected": "unresolved",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "country-not-nationality",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/country-not-nationality.md",
+          "line": 1,
+          "metadata": {
+            "name": "nat_cd",
+            "entity": "Account",
+            "description": "Country of the branch servicing the account. It does not describe the account holder nationality."
+          }
+        }
+      ],
+      "choices": [
+        "nationality",
+        "servicing_country",
+        "unresolved"
+      ],
+      "expected": "servicing_country",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "multilingual-meaning",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/multilingual-meaning.md",
+          "line": 1,
+          "metadata": {
+            "name": "data_nascimento",
+            "entity": "Pessoa",
+            "data_type": "DATE",
+            "description": "Data de nascimento da pessoa informada durante o cadastro."
+          }
+        }
+      ],
+      "choices": [
+        "date_of_birth",
+        "contract_renewal_date",
+        "unresolved"
+      ],
+      "expected": "date_of_birth",
+      "required_citations": [
+        "E000001"
+      ]
+    },
+    {
+      "id": "language-not-nationality",
+      "evidence": [
+        {
+          "ref": "E000001",
+          "file": "fixture/language-not-nationality.md",
+          "line": 1,
+          "metadata": {
+            "name": "lng_pref",
+            "entity": "NotificationPreferences",
+            "description": "Language selected by the user for letters and notifications; no nationality or country is inferred."
+          }
+        }
+      ],
+      "choices": [
+        "nationality",
+        "preferred_language",
+        "unresolved"
+      ],
+      "expected": "preferred_language",
+      "required_citations": [
+        "E000001"
+      ]
+    }
+  ]
+}

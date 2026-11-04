@@ -1,0 +1,402 @@
+{
+  "suite_sha256": "f3678f87a64898609870d275fe5aec4af0cccee25899d875b2350151f943f8bf",
+  "model": "unsloth/Qwen3.5-2B-GGUF",
+  "model_sha256": "aaf42c8b7c3cab2bf3d69c355048d4a0ee9973d48f16c731c0520ee914699223",
+  "revision": "f6d5376be1edb4d416d56da11e5397a961aca8ae",
+  "mode": "field-annotations",
+  "inference_contract": "a2a8922df6a3d250c26dcf6b537cbeee75b2e96f8d5c7dc2bfeee77d409d1f47",
+  "results": [
+    {
+      "id": "owner-key",
+      "passed": true,
+      "decision": "customer_identifier",
+      "expected": "customer_identifier",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "customer_identifier",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 6.739
+    },
+    {
+      "id": "application-key",
+      "passed": true,
+      "decision": "loan_application_identifier",
+      "expected": "loan_application_identifier",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "loan_application_identifier",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 4.461
+    },
+    {
+      "id": "request-link",
+      "passed": false,
+      "decision": "request identifier",
+      "expected": "correlation_identifier",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "request identifier",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 4.214
+    },
+    {
+      "id": "opaque-dictionary",
+      "passed": false,
+      "decision": "insurance coverage end date",
+      "expected": "coverage_end_date",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "insurance coverage end date",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 6.337
+    },
+    {
+      "id": "misleading-birth",
+      "passed": false,
+      "decision": "batch job execution start timestamp",
+      "expected": "job_start_time",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "batch job execution start timestamp",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 6.116
+    },
+    {
+      "id": "city-not-birthplace",
+      "passed": true,
+      "decision": "shipping_city",
+      "expected": "shipping_city",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "shipping_city",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 4.994
+    },
+    {
+      "id": "lc-not-language",
+      "passed": false,
+      "decision": "course catalog foreign key",
+      "expected": "course_identifier",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "course catalog foreign key",
+            "status": "unresolved",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 4.24
+    },
+    {
+      "id": "french-date",
+      "passed": false,
+      "decision": "invoice due date",
+      "expected": "invoice_due_date",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "invoice due date",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 4.162
+    },
+    {
+      "id": "unexplained-code",
+      "passed": false,
+      "decision": "unresolved",
+      "expected": "unresolved",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "unresolved",
+            "status": "hypothesis",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 4.381
+    },
+    {
+      "id": "conflicting-party-key",
+      "passed": false,
+      "decision": "policy identifier",
+      "expected": "ambiguous",
+      "response": {
+        "annotations": [
+          {
+            "ref": "E000001",
+            "meaning": "policy identifier",
+            "status": "unresolved",
+            "citations": [
+              "E000001"
+            ]
+          }
+        ]
+      },
+      "seconds": 4.892
+    }
+  ],
+  "passed": 3,
+  "total": 10,
+  "usage": [
+    {
+      "seconds": 6.729,
+      "input_tokens": 281,
+      "output_tokens": 39,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 0,
+      "templated_input_tokens": 281,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 3.205,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 281,
+        "prompt_ms": 3204.623,
+        "prompt_per_second": 87.68582138991077,
+        "predicted_n": 39,
+        "predicted_ms": 3514.933,
+        "predicted_per_second": 10.81101688140286
+      }
+    },
+    {
+      "seconds": 4.441,
+      "input_tokens": 280,
+      "output_tokens": 40,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 280,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 1.97,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 208,
+        "prompt_ms": 1977.783,
+        "prompt_per_second": 105.16826163436536,
+        "predicted_n": 40,
+        "predicted_ms": 2453.143,
+        "predicted_per_second": 15.897972519335399
+      }
+    },
+    {
+      "seconds": 4.202,
+      "input_tokens": 284,
+      "output_tokens": 39,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 284,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 1.896,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 212,
+        "prompt_ms": 1900.303,
+        "prompt_per_second": 111.56115629981113,
+        "predicted_n": 39,
+        "predicted_ms": 2294.312,
+        "predicted_per_second": 16.56269940618364
+      }
+    },
+    {
+      "seconds": 6.326,
+      "input_tokens": 277,
+      "output_tokens": 41,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 277,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.522,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 205,
+        "prompt_ms": 2528.781,
+        "prompt_per_second": 81.0667274073951,
+        "predicted_n": 41,
+        "predicted_ms": 3789.737,
+        "predicted_per_second": 10.554822142011437
+      }
+    },
+    {
+      "seconds": 6.098,
+      "input_tokens": 283,
+      "output_tokens": 42,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 283,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.539,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 211,
+        "prompt_ms": 2546.694,
+        "prompt_per_second": 82.85251388663107,
+        "predicted_n": 42,
+        "predicted_ms": 3540.628,
+        "predicted_per_second": 11.57986662253137
+      }
+    },
+    {
+      "seconds": 4.981,
+      "input_tokens": 286,
+      "output_tokens": 39,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 286,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.499,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 214,
+        "prompt_ms": 2506.03,
+        "prompt_per_second": 85.39402960060333,
+        "predicted_n": 39,
+        "predicted_ms": 2465.978,
+        "predicted_per_second": 15.409707629184041
+      }
+    },
+    {
+      "seconds": 4.227,
+      "input_tokens": 278,
+      "output_tokens": 40,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 278,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 1.828,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 206,
+        "prompt_ms": 1834.022,
+        "prompt_per_second": 112.32144434472433,
+        "predicted_n": 40,
+        "predicted_ms": 2386.009,
+        "predicted_per_second": 16.345286208057054
+      }
+    },
+    {
+      "seconds": 4.148,
+      "input_tokens": 277,
+      "output_tokens": 40,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 277,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 1.801,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 205,
+        "prompt_ms": 1805.056,
+        "prompt_per_second": 113.56988370443908,
+        "predicted_n": 40,
+        "predicted_ms": 2334.452,
+        "predicted_per_second": 16.70627624813018
+      }
+    },
+    {
+      "seconds": 4.369,
+      "input_tokens": 285,
+      "output_tokens": 39,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 285,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 1.828,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 213,
+        "prompt_ms": 1831.358,
+        "prompt_per_second": 116.30713383183408,
+        "predicted_n": 39,
+        "predicted_ms": 2530.342,
+        "predicted_per_second": 15.017732780786154
+      }
+    },
+    {
+      "seconds": 4.878,
+      "input_tokens": 324,
+      "output_tokens": 38,
+      "reasoning_tokens": null,
+      "cached_input_tokens": 72,
+      "templated_input_tokens": 324,
+      "model": "unsloth/Qwen3.5-2B-GGUF",
+      "first_token_seconds": 2.417,
+      "timings": {
+        "cache_n": 72,
+        "prompt_n": 252,
+        "prompt_ms": 2422.974,
+        "prompt_per_second": 104.00441771145708,
+        "predicted_n": 38,
+        "predicted_ms": 2447.973,
+        "predicted_per_second": 15.11454578951647
+      }
+    }
+  ],
+  "resources": {
+    "peak_rss_mib": 1901.6,
+    "gpu_memory_mib": null,
+    "memory_limit_hit": false
+  },
+  "seconds": 53.261,
+  "qualification": "EXACT_LABEL_PROTOCOL_CHECK_ONLY_NOT_DISCOVERY_ACCURACY_CERTIFICATION",
+  "independent_domain_owner_review": false
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASSED",
+  "client": "Python MCP SDK 1.27.0",
+  "protocol": "2025-11-25",
+  "checks": [
+    "TLS/OIDC",
+    "initialize",
+    "list tools",
+    "authorized tool call"
+  ],
+  "limitation": "SDK compatibility; signed-in Copilot acceptance is a separate check"
+}

@@ -1,0 +1,53 @@
+# Persistent deployment: these are PAID Render resources, not a free demo.
+# Review Render's estimated charges before clicking Apply/Create Resources.
+services:
+  - type: web
+    name: originspan-discovery
+    runtime: docker
+    region: singapore
+    plan: 1c-2g
+    dockerfilePath: ./Dockerfile.render
+    dockerContext: .
+    healthCheckPath: /readyz
+    autoDeployTrigger: "off"
+    maxShutdownDelaySeconds: 45
+    disk:
+      name: originspan-state
+      mountPath: /var/data
+      sizeGB: 10
+    envVars:
+      - key: ORIGINSPAN_DATABASE_URL
+        fromDatabase:
+          name: originspan-catalog
+          property: connectionString
+      - key: ORIGINSPAN_STATE
+        value: /var/data/originspan
+      - key: ORIGINSPAN_OIDC_ISSUER
+        sync: false
+      - key: ORIGINSPAN_OIDC_JWKS
+        sync: false
+      # Default audience is RENDER_EXTERNAL_URL + /mcp. For a custom domain,
+      # set ORIGINSPAN_RESOURCE_URL in the dashboard to its exact HTTPS MCP URL.
+      - key: ORIGINSPAN_EXTERNAL_WORKERS
+        value: "true"
+      - key: ORIGINSPAN_MAX_ACTIVE_ANALYSES
+        value: "2"
+      - key: ORIGINSPAN_MODEL_THREADS
+        value: "1"
+      - key: ORIGINSPAN_PGVECTOR
+        value: "false"
+      - key: ORIGINSPAN_NEURAL_ENABLED
+        value: "false"
+      - key: ORIGINSPAN_MIN_FREE_BYTES
+        value: "268435456"
+      - key: ORIGINSPAN_LOG_JSON
+        value: "true"
+databases:
+  - name: originspan-catalog
+    region: singapore
+    plan: 0.1c-256mb
+    databaseName: originspan
+    user: originspan_app
+    postgresMajorVersion: "16"
+    diskSizeGB: 5
+    ipAllowList: []
