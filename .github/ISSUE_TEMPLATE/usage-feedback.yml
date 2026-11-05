@@ -1,0 +1,52 @@
+name: Share your experience
+description: Tell us what you tried with OriginSpan and how it went.
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying OriginSpan! Installation attempts and small experiments are welcome.
+        This report is public. Do not include private source code, credentials, customer data, or sensitive paths.
+        You can leave your organization and project identity out of the report.
+  - type: dropdown
+    id: stage
+    attributes:
+      label: What have you tried?
+      options:
+        - I am exploring the documentation
+        - I attempted installation
+        - I installed it and ran a sample
+        - I tried it on an approved repository
+        - I use it regularly
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: What were you hoping to do?
+      description: Describe your task without sharing private source or data.
+      placeholder: For example, trace SQL transformations or understand service dependencies through an MCP client.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: How did it go?
+      description: What worked, what failed, or what would make the project more useful?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: OriginSpan version
+      placeholder: For example, 0.5.2rc2
+  - type: input
+    id: environment
+    attributes:
+      label: Installation route and MCP client
+      placeholder: For example, PyPI on Windows with Copilot, or Docker with another client.
+  - type: input
+    id: public-project
+    attributes:
+      label: Public project or organization link (optional)
+      description: Share only if you want it associated with this public report.

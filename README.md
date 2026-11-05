@@ -9,6 +9,8 @@ Explore what an application does, what talks to what, where fields appear, and h
 [![Container](https://img.shields.io/badge/GHCR-container-2496ED)](https://github.com/users/kunaldrafts25/packages/container/package/originspan-mcp)
 [![Checks](https://github.com/kunaldrafts25/OriginSpan-MCP/actions/workflows/test.yml/badge.svg)](https://github.com/kunaldrafts25/OriginSpan-MCP/actions/workflows/test.yml)
 [![License](https://img.shields.io/badge/License-Apache--2.0-green)](LICENSE)
+[![PyPI downloads per month](https://img.shields.io/pypi/dm/originspan-mcp?label=PyPI%20downloads%2Fmonth)](https://pypistats.org/packages/originspan-mcp)
+[![GitHub release asset downloads](https://img.shields.io/github/downloads/kunaldrafts25/OriginSpan-MCP/total?label=release%20asset%20downloads)](https://github.com/kunaldrafts25/OriginSpan-MCP/releases)
 
 Use it with **Copilot or another MCP client**, or generate reports through the **optional local-model workflow**. The MCP evidence server itself does not require a model subscription.
 
@@ -147,6 +149,21 @@ Dynamic behavior, unsupported formats and missing context can leave gaps. A larg
 This workflow uses code, schemas and approved metadata. It does not profile live customer records, execute application code, automatically edit sources or write to target systems. Interpretations cannot approve themselves.
 
 Treat source text as untrusted evidence, never instructions. Keep credentials and customer records out of issue reports.
+
+## Trying OriginSpan?
+
+[Share your experience](https://github.com/kunaldrafts25/OriginSpan-MCP/issues/new?template=usage-feedback.yml&title=%5BFeedback%5D%20)
+to let the maintainer know what you tried, whether it worked, and what would make it more useful.
+Installation feedback and small experiments are welcome; you do not need a production deployment.
+Sharing your organization or a public project link is optional. Reports are public, so leave out private code, credentials and customer data.
+
+The badges above show monthly PyPI downloads and downloads of GitHub release assets.
+They count download events, including repeat downloads and automation; they do not identify people or establish active users.
+New-package statistics can be delayed, and badges are cached.
+
+Maintainers can see recent repository visits and clones in
+[Insights → Traffic](https://github.com/kunaldrafts25/OriginSpan-MCP/graphs/traffic).
+See [project activity metrics](docs/PROJECT_ACTIVITY.md) for the meaning and limits of each signal.
 
 ## Keep exploring
 
